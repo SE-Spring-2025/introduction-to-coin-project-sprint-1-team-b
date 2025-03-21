@@ -1,29 +1,5 @@
 public class Coin
 {
-<<<<<<< HEAD
-    public Coin()
-    {
-        this.value = null;
-        this.year = null
-    }
-
-    public Coin(double value)
-    {
-        this.value = value;
-        this.year = null;
-    }
-
-    public Coin(double value, int year)
-    {
-        this.value = value;
-        this.year = year;
-    }
-
-    public String toString()
-    {
-        return ":)";
-    }
-=======
     double value;
     String commonName;
     String frontMotto;
@@ -36,5 +12,25 @@ public class Coin
     String valueDescription;
     boolean ridgedEdge;
     String metallurgy;
->>>>>>> 07c9a2f969008d138e0609638101afb9846c0df5
+
+    public Coin()
+    {
+        this.value = 0.0;
+    }
+
+    public Coin(double value)
+    {
+        this.value = value;
+    }
+
+    public Coin(double value, int year)
+    {
+        this.value = value;
+    }
+
+    public String toString()
+    {
+        return ":)";
+    }
+
 }
