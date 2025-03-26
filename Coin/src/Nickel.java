@@ -16,7 +16,7 @@ public class Nickel extends Coin
     public Nickel(int year)
     {
         super(0.05);
-        this.year = year;
+        this.manufactureYear = year;
     }
     
 }

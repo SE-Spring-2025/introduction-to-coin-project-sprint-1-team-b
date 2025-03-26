@@ -16,6 +16,6 @@ public class HalfDollar extends Coin
     public HalfDollar(int year)
     {
         super(0.5);
-        this.year = year;
+        this.manufactureYear = year;
     }
 }

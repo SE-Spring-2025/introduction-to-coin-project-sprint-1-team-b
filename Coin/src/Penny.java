@@ -16,7 +16,7 @@ public class Penny extends Coin
     public Penny(int year)
     {
         super(0.01);
-        this.year = year;
+        this.manufactureYear = year;
     }
     
 }
