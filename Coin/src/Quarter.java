@@ -16,7 +16,11 @@ public class Quarter extends Coin
     public Quarter(int year)
     {
         super(0.25);
+<<<<<<< HEAD
         this.year = year;
+=======
+        this.manufactureYear = year;
+>>>>>>> 5d48e7b2f41891b2e85b2c800e4eae911b373f26
     }
     
 }
