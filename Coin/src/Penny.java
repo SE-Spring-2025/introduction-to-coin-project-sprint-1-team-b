@@ -7,5 +7,16 @@ public class Penny extends Coin
     {
         super(0.01);
     }
+
+    /**
+     * Constructor for the Penny class. Sets the value of a
+     * penny to 0.01 and sets the year
+     * @param year year of coin.
+     */
+    public Penny(int year)
+    {
+        super(0.01);
+        this.year = year;
+    }
     
 }

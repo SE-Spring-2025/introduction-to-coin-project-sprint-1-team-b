@@ -7,5 +7,16 @@ public class Dime extends Coin
     {
         super(0.1);
     }
+
+    /**
+     * Constructor for the Dime class. Sets the value of a 
+     * dime to 0.1 and sets the year
+     * @param year year of coin.
+     */
+    public Dime(int year)
+    {
+        super(0.1);
+        this.year = year;
+    }
     
 }
