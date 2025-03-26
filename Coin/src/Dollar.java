@@ -1,3 +1,8 @@
-public class Dollar {
+public class Dollar extends Coin 
+{
+    public Dollar() 
+    {
+        super(1.0);
+    }
     
 }

@@ -1,3 +1,8 @@
-public class Nickel {
+public class Nickel extends Coin 
+{
+    public Nickel() 
+    {
+        super(0.05);
+    }
     
 }
