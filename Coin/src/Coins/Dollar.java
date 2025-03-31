@@ -7,7 +7,7 @@ public class Dollar extends Coin
     static int manufactureYear;
     static String frontImage = "S_Anthony";
     static String backImage = "Moon_Eagle";
-    static String backMotto = "E PLURIBUS ENUM";
+    static String backMotto = "E PLURIBUS UNUM";
     static String frontLabel = "LIBERTY";
     static String backLabel = "UNITED STATES OF AMERICA";
     static String valueDescription = "ONE DOLLAR";

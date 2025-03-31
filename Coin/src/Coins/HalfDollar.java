@@ -7,11 +7,11 @@ public class HalfDollar extends Coin
     static int manufactureYear;
     static String frontImage = "J_Kennedy";
     static String backImage = "Presidential_Seal";
-    static String backMotto = "E PLURIBUS ENUM";
+    static String backMotto = "E PLURIBUS UNUM";
     static String frontLabel = "LIBERTY";
     static String backLabel = "UNITED STATES OF AMERICA";
     static String valueDescription = "HALF DOLLAR";
-    static boolean ridgedEdge = false;
+    static boolean ridgedEdge = true;
     static String metallurgy = "Cupro-Nickel";
     /**
      * Constructor for the HalfDollar class. Sets the value of a half dollar to 0.5

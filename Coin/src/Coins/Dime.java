@@ -7,7 +7,7 @@ public class Dime extends Coin
     static int manufactureYear;
     static String frontImage = "F_Roosevelt";
     static String backImage = "Torch_Branches";
-    static String backMotto = "E PLURIBUS ENUM";
+    static String backMotto = "E PLURIBUS UNUM";
     static String frontLabel = "LIBERTY";
     static String backLabel = "UNITED STATES OF AMERICA";
     static String valueDescription = "ONE DIME";

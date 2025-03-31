@@ -7,7 +7,7 @@ public class Quarter extends Coin
     static int manufactureYear;
     static String frontImage = "G_Washington";
     static String backImage = "Eagle";
-    static String backMotto = "E PLURIBUS ENUM";
+    static String backMotto = "E PLURIBUS UNUM";
     static String frontLabel = "LIBERTY";
     static String backLabel = "UNITED STATES OF AMERICA";
     static String valueDescription = "QUARTER DOLLAR";

@@ -35,8 +35,18 @@ public abstract class Coin
 
     public String toString()
     {
-        return String.format("Value: %f Value: %s Value: %s Value: %d Value: %s Value: %s Value: %s Value: %s Value: %s Value: %b Value: %s", 
-            value, commonName, frontMotto, manufactureYear, frontImage, backImage, backMotto, frontLabel, backLabel, valueDescription, ridgedEdge, metallurgy);
+        String s = String.format("[%s,%.2f,%d,'%s','%s','%s','%s','%s','%s','%s',", 
+            commonName, value, manufactureYear, frontMotto,  backMotto, frontImage, backImage, frontLabel, backLabel, valueDescription);
+        if (ridgedEdge == true)
+        {
+            s += String.format("ridges,'%s']", metallurgy);
+        }
+        else
+        {
+            s += String.format("no ridges,'%s']", metallurgy);
+        }
+
+        return s;
     }
 
     public abstract double getValue();

@@ -7,7 +7,7 @@ public class Penny extends Coin
     static int manufactureYear;
     static String frontImage = "A_Lincoln";
     static String backImage = "Lincoln_Memorial";
-    static String backMotto = "E PLURIBUS ENUM";
+    static String backMotto = "E PLURIBUS UNUM";
     static String frontLabel = "LIBERTY";
     static String backLabel = "UNITED STATES OF AMERICA";
     static String valueDescription = "ONE CENT";

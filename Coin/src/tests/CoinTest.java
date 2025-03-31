@@ -1,22 +1,15 @@
-<<<<<<< HEAD
 package tests;
 
-import java.util.Calendar;
-
-=======
-// import java.util.Calendar;
->>>>>>> b114d2fd5c6b3a40c13d84c5ea50c4c05666426c
 import static org.junit.jupiter.api.Assertions.assertEquals;
-// import static org.junit.jupiter.api.Assertions.assertTrue;
-// import static org.junit.jupiter.api.Assertions.fail;
-// import org.junit.jupiter.api.BeforeAll;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 import Coins.*;
 
 public class CoinTest {
     private Coin testCoin = new MockCoin();
+	private int currYear = 2025;
 
-<<<<<<< HEAD
     @Test
     public void testConstructors() {
 	// Basically just make sure they don't blow up
@@ -80,10 +73,10 @@ public class CoinTest {
 	return Math.abs(a-b) < 0.00001;
     }
     private boolean testPenny() {
-	Coin c = new Penny(Coin.PENNY_VALUE);
+	Coin c = new Penny(currYear);
 	
 	if (! "Penny".equals(c.getCommonName())) return false;
-	if (! cmpDoubles(c.getValue(), Coin.PENNY_VALUE)) return false;
+	if (! cmpDoubles(c.getValue(), .01)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
 	if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) return false;
 	if (! "LIBERTY".equals(c.getFrontLabel())) return false;
@@ -99,10 +92,10 @@ public class CoinTest {
 	return true;
     }
     private boolean testNickel() {
-	Coin c = new Nickel(Coin.NICKEL_VALUE);
+	Coin c = new Nickel(currYear);
 	
 	if (! "Nickel".equals(c.getCommonName())) return false;
-	if (! cmpDoubles(c.getValue(), Coin.NICKEL_VALUE)) return false;
+	if (! cmpDoubles(c.getValue(), .05)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
 	if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) return false;
 	if (! "LIBERTY".equals(c.getFrontLabel())) return false;
@@ -118,10 +111,10 @@ public class CoinTest {
 	return true;
     }
     private boolean testDime() {
-	Coin c = new Dime(Coin.DIME_VALUE);
+	Coin c = new Dime(currYear);
 	
 	if (! "Dime".equals(c.getCommonName())) return false;
-	if (! cmpDoubles(c.getValue(), Coin.DIME_VALUE)) return false;
+	if (! cmpDoubles(c.getValue(), .1)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
 	if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) return false;
 	if (! "LIBERTY".equals(c.getFrontLabel())) return false;
@@ -137,10 +130,10 @@ public class CoinTest {
 	return true;
     }
     private boolean testQuarter() {
-	Coin c = new Quarter(Coin.QUARTER_VALUE);
+	Coin c = new Quarter(currYear);
 	
 	if (! "Quarter".equals(c.getCommonName())) return false;
-	if (! cmpDoubles(c.getValue(), Coin.QUARTER_VALUE)) return false;
+	if (! cmpDoubles(c.getValue(), .25)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
 	if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) return false;
 	if (! "LIBERTY".equals(c.getFrontLabel())) return false;
@@ -156,10 +149,10 @@ public class CoinTest {
 	return true;
     }
     private boolean testHalfDollar() {
-	Coin c = new HalfDollar(Coin.HALFDOLLAR_VALUE);
+	Coin c = new HalfDollar(currYear);
 	
 	if (! "HalfDollar".equals(c.getCommonName())) return false;
-	if (! cmpDoubles(c.getValue(), Coin.HALFDOLLAR_VALUE)) return false;
+	if (! cmpDoubles(c.getValue(), .5)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
 	if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) return false;
 	if (! "LIBERTY".equals(c.getFrontLabel())) return false;
@@ -175,10 +168,10 @@ public class CoinTest {
 	return true;
     }
     private boolean testDollar() {
-	Coin c = new Dollar(Coin.DOLLAR_VALUE);
+	Coin c = new Dollar(currYear);
 	
 	if (! "Dollar".equals(c.getCommonName())) return false;
-	if (! cmpDoubles(c.getValue(), Coin.DOLLAR_VALUE)) return false;
+	if (! cmpDoubles(c.getValue(), 1.00)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
 	if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) return false;
 	if (! "LIBERTY".equals(c.getFrontLabel())) return false;
@@ -193,13 +186,12 @@ public class CoinTest {
 	// make it here then didn't fail!
 	return true;
     }
-=======
 	@Test
-	public void testGetters() {
+	public void testCoinGetters() {
 		assertEquals(24, testCoin.getValue());
 		assertEquals("Mock", testCoin.getCommonName()); 
 		assertEquals("frontMotto", testCoin.getFrontMotto());
-		assertEquals(1788, testCoin.getManufactureYear()); 
+		assertEquals(1788, testCoin.getYear()); 
 		assertEquals("frontImage", testCoin.getFrontImage()); 
 		assertEquals("backImage", testCoin.getBackImage());
 		assertEquals("backMotto", testCoin.getBackMotto());
@@ -209,6 +201,5 @@ public class CoinTest {
 		assertEquals(false, testCoin.getRidgedEdge());
 		assertEquals("metallurgy", testCoin.getMetallurgy());
 	}
->>>>>>> b114d2fd5c6b3a40c13d84c5ea50c4c05666426c
 }
     

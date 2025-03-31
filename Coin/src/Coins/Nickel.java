@@ -7,7 +7,7 @@ public class Nickel extends Coin
     static int manufactureYear;
     static String frontImage = "T_Jefferson";
     static String backImage = "Jefferson_Memorial";
-    static String backMotto = "E PLURIBUS ENUM";
+    static String backMotto = "E PLURIBUS UNUM";
     static String frontLabel = "LIBERTY";
     static String backLabel = "UNITED STATES OF AMERICA";
     static String valueDescription = "FIVE CENTS";

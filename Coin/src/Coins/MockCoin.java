@@ -2,16 +2,16 @@ package Coins;
 
 public class MockCoin extends Coin
 {
-    static double value = .24;
+    static double value = 24;
     static String commonName = "Mock";
     static String frontMotto = "frontMotto";
-    static int manufactureYear;
+    static int manufactureYear = 1788;
     static String frontImage = "frontImage";
     static String backImage = "backImage";
     static String backMotto = "backMotto";
     static String frontLabel = "frontLabel";
     static String backLabel = "backLabel";
-    static String valueDescription = "TWENTY FOUR CENTS";
+    static String valueDescription = "twenty-four cents";
     static boolean ridgedEdge = false;
     static String metallurgy = "metallurgy";
     /**
