@@ -1,3 +1,4 @@
+package Coins;
 public abstract class Coin
 {
     double value;
@@ -38,4 +39,27 @@ public abstract class Coin
             value, commonName, frontMotto, manufactureYear, frontImage, backImage, backMotto, frontLabel, backLabel, valueDescription, ridgedEdge, metallurgy);
     }
 
+    public abstract double getValue();
+
+    public abstract String getCommonName();
+
+    public abstract String getFrontMotto();
+
+    public abstract String getBackMotto();
+
+    public abstract int getYear();
+
+    public abstract String getFrontImage();
+
+    public abstract String getBackImage();
+
+    public abstract String getFrontLabel();
+
+    public abstract String getBackLabel();
+
+    public abstract String getValueDescription();
+
+    public abstract Boolean getRidgedEdge();
+
+    public abstract String getMetallurgy();
 }

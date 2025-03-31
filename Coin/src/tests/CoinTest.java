@@ -1,3 +1,5 @@
+package tests;
+
 import java.util.Calendar;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -5,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import Coins.*;
 
 public class CoinTest {
     private static int currYear;
@@ -19,7 +22,7 @@ public class CoinTest {
 	// Basically just make sure they don't blow up
 	// parameterless constructor
 	try {
-	    Coin c = new Coin();
+	    Coin c = new MockCoin();
 	}
 	catch (Exception e) {
 	    fail("Coin() constructor caused exception: "+e.getMessage());
@@ -27,7 +30,7 @@ public class CoinTest {
 
 	// value arg constructor
 	try {
-	    Coin c = new Coin(0.05);
+	    Coin c = new Nickel();
 	}
 	catch (Exception e) {
 	    fail("Coin() constructor caused exception: "+e.getMessage());
@@ -35,7 +38,7 @@ public class CoinTest {
 
 	// value and year args constructor
 	try {
-	    Coin c = new Coin(0.10, 2020);
+	    Coin c = new Dime(2020);
 	}
 	catch (Exception e) {
 	    fail("Coin() constructor caused exception: "+e.getMessage());
@@ -60,7 +63,7 @@ public class CoinTest {
 
     @Test
     public void testToString() {
-	Coin c = new Coin(0.50, 1999);
+	Coin c = new HalfDollar(1999);
 	String expectedOutput =
 	    "[HalfDollar,0.50,1999,'IN GOD WE TRUST','E PLURIBUS UNUM'"
 	    + ",'J_Kennedy','Presidential_Seal','LIBERTY'"
@@ -77,9 +80,9 @@ public class CoinTest {
 	return Math.abs(a-b) < 0.00001;
     }
     private boolean testPenny() {
-	Coin c = new Coin(Coin.PENNY_VALUE);
+	Coin c = new Penny(Coin.PENNY_VALUE);
 	
-	if (! "Penny".equals(c.getFamiliarName())) return false;
+	if (! "Penny".equals(c.getCommonName())) return false;
 	if (! cmpDoubles(c.getValue(), Coin.PENNY_VALUE)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
 	if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) return false;
@@ -96,9 +99,9 @@ public class CoinTest {
 	return true;
     }
     private boolean testNickel() {
-	Coin c = new Coin(Coin.NICKEL_VALUE);
+	Coin c = new Nickel(Coin.NICKEL_VALUE);
 	
-	if (! "Nickel".equals(c.getFamiliarName())) return false;
+	if (! "Nickel".equals(c.getCommonName())) return false;
 	if (! cmpDoubles(c.getValue(), Coin.NICKEL_VALUE)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
 	if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) return false;
@@ -115,9 +118,9 @@ public class CoinTest {
 	return true;
     }
     private boolean testDime() {
-	Coin c = new Coin(Coin.DIME_VALUE);
+	Coin c = new Dime(Coin.DIME_VALUE);
 	
-	if (! "Dime".equals(c.getFamiliarName())) return false;
+	if (! "Dime".equals(c.getCommonName())) return false;
 	if (! cmpDoubles(c.getValue(), Coin.DIME_VALUE)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
 	if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) return false;
@@ -134,9 +137,9 @@ public class CoinTest {
 	return true;
     }
     private boolean testQuarter() {
-	Coin c = new Coin(Coin.QUARTER_VALUE);
+	Coin c = new Quarter(Coin.QUARTER_VALUE);
 	
-	if (! "Quarter".equals(c.getFamiliarName())) return false;
+	if (! "Quarter".equals(c.getCommonName())) return false;
 	if (! cmpDoubles(c.getValue(), Coin.QUARTER_VALUE)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
 	if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) return false;
@@ -153,9 +156,9 @@ public class CoinTest {
 	return true;
     }
     private boolean testHalfDollar() {
-	Coin c = new Coin(Coin.HALFDOLLAR_VALUE);
+	Coin c = new HalfDollar(Coin.HALFDOLLAR_VALUE);
 	
-	if (! "HalfDollar".equals(c.getFamiliarName())) return false;
+	if (! "HalfDollar".equals(c.getCommonName())) return false;
 	if (! cmpDoubles(c.getValue(), Coin.HALFDOLLAR_VALUE)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
 	if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) return false;
@@ -172,9 +175,9 @@ public class CoinTest {
 	return true;
     }
     private boolean testDollar() {
-	Coin c = new Coin(Coin.DOLLAR_VALUE);
+	Coin c = new Dollar(Coin.DOLLAR_VALUE);
 	
-	if (! "Dollar".equals(c.getFamiliarName())) return false;
+	if (! "Dollar".equals(c.getCommonName())) return false;
 	if (! cmpDoubles(c.getValue(), Coin.DOLLAR_VALUE)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
 	if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) return false;
