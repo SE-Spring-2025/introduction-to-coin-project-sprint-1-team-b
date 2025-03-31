@@ -1,22 +1,22 @@
+<<<<<<< HEAD
 package tests;
 
 import java.util.Calendar;
 
+=======
+// import java.util.Calendar;
+>>>>>>> b114d2fd5c6b3a40c13d84c5ea50c4c05666426c
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
-import org.junit.jupiter.api.BeforeAll;
+// import static org.junit.jupiter.api.Assertions.assertTrue;
+// import static org.junit.jupiter.api.Assertions.fail;
+// import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import Coins.*;
 
 public class CoinTest {
-    private static int currYear;
-    
-    @BeforeAll
-    public static void getCurrYear() {
-	currYear = (Calendar.getInstance()).get(Calendar.YEAR);
-    }
+    private Coin testCoin = new MockCoin();
 
+<<<<<<< HEAD
     @Test
     public void testConstructors() {
 	// Basically just make sure they don't blow up
@@ -193,5 +193,22 @@ public class CoinTest {
 	// make it here then didn't fail!
 	return true;
     }
+=======
+	@Test
+	public void testGetters() {
+		assertEquals(24, testCoin.getValue());
+		assertEquals("Mock", testCoin.getCommonName()); 
+		assertEquals("frontMotto", testCoin.getFrontMotto());
+		assertEquals(1788, testCoin.getManufactureYear()); 
+		assertEquals("frontImage", testCoin.getFrontImage()); 
+		assertEquals("backImage", testCoin.getBackImage());
+		assertEquals("backMotto", testCoin.getBackMotto());
+		assertEquals("frontLabel", testCoin.getFrontLabel());
+		assertEquals("backLabel", testCoin.getBackLabel());
+		assertEquals("twenty-four cents", testCoin.getValueDescription());
+		assertEquals(false, testCoin.getRidgedEdge());
+		assertEquals("metallurgy", testCoin.getMetallurgy());
+	}
+>>>>>>> b114d2fd5c6b3a40c13d84c5ea50c4c05666426c
 }
     
