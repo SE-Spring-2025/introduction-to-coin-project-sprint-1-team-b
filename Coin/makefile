@@ -21,16 +21,15 @@ compile: $(JUNIT5_JAR)
 test: $(JUNIT5_JAR)
 	java -cp bin/tests:bin/main:$(JUNIT5_JAR) $(JUNIT5_RUNNER) execute --scan-class-path 
 
-demo: bin/client/Demo.class
-	java -cp .:bin/client:bin/main Demo
+demo: bin/client/client/Demo.class
+	java -cp .:bin/client:bin/main client.Demo
 
 check: styles.xml $(CKSTYLE_LIB)
 	java -jar $(CKSTYLE_LIB) -c ./styles.xml src/main/Coins/*.java
 
 clean:
 #	Java class files
-	-rm -f ./bin/**/*.class
-	-rm -f ./bin/*.class
+	find ./bin -type f -name "*.class" -delete
 #	Emacs editor backup files
 	-rm -f ./*~
 	-rm -f ./src/**/*~
