@@ -1,94 +1,152 @@
-package Coins;
-public class Dime extends Coin 
-{
-    static double value = .1;
-    static String commonName = "Dime";
-    static String frontMotto = "IN GOD WE TRUST";
-    static int manufactureYear;
-    static String frontImage = "F_Roosevelt";
-    static String backImage = "Torch_Branches";
-    static String backMotto = "E PLURIBUS UNUM";
-    static String frontLabel = "LIBERTY";
-    static String backLabel = "UNITED STATES OF AMERICA";
-    static String valueDescription = "ONE DIME";
-    static boolean ridgedEdge = true;
-    static String metallurgy = "Cupro-Nickel";
-        /**
-         * Constructor for objects of class Dime. Sets value of dime to 0.1
-         */
-        public Dime() 
-        {
-            super(value, commonName, frontMotto, 1776, frontImage, backImage, backMotto, frontLabel, backLabel, valueDescription, ridgedEdge, metallurgy);
-        }
-    
-        /**
-         * Constructor for the Dime class. Sets the value of a 
-         * dime to 0.1 and sets the year
-         * @param year year of coin.
-         */
-        public Dime(int year)
-        {
-            super(value, commonName, frontMotto, year, frontImage, backImage, backMotto, frontLabel, backLabel, valueDescription, ridgedEdge, metallurgy);
-            Dime.manufactureYear = year;
-    }
-    
-    public double getValue()
-    {
-        return value;
+package coins;
+
+/**
+ * Represents a Dime coin.
+ * 
+ * @author GroupB
+ * @version 1.0
+ */
+public class Dime extends Coin {
+    private static final double VALUE = 0.1;
+    private static final String COMMON_NAME = "Dime";
+    private static final String FRONT_MOTTO = "IN GOD WE TRUST";
+    private static final int DEFAULT_YEAR = 1776;
+    private static int manufactureYear;
+    private static final String FRONT_IMAGE = "F_Roosevelt";
+    private static final String BACK_IMAGE = "Torch_Branches";
+    private static final String BACK_MOTTO = "E PLURIBUS UNUM";
+    private static final String FRONT_LABEL = "LIBERTY";
+    private static final String BACK_LABEL = "UNITED STATES OF AMERICA";
+    private static final String VALUE_DESCRIPTION = "ONE DIME";
+    private static final boolean RIDGED_EDGE = true;
+    private static final String METALLURGY = "Cupro-Nickel";
+
+    /**
+     * Constructor for the Dime class.
+     */
+    public Dime() {
+        super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
+            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
+            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
     }
 
-    public String getCommonName()
-    {
-        return commonName;
+    /**
+     * Constructor for the Dime class with a specified year.
+     * 
+     * @param year year of the coin
+     */
+    public Dime(int year) {
+        super(VALUE, COMMON_NAME, FRONT_MOTTO, year,
+            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
+            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        Dime.manufactureYear = year;
     }
 
-    public String getFrontMotto()
-    {
-        return frontMotto;
+    /**
+     * Gets the value of the Dime.
+     * 
+     * @return coin value
+     */
+    public double getValue() {
+        return VALUE;
     }
 
-    public String getBackMotto()
-    {
-        return backMotto;
+    /**
+     * Gets the common name of the Dime.
+     * 
+     * @return common name
+     */
+    public String getCommonName() {
+        return COMMON_NAME;
     }
 
-    public int getYear()
-    {
+    /**
+     * Gets the front motto.
+     * 
+     * @return front motto
+     */
+    public String getFrontMotto() {
+        return FRONT_MOTTO;
+    }
+
+    /**
+     * Gets the back motto.
+     * 
+     * @return back motto
+     */
+    public String getBackMotto() {
+        return BACK_MOTTO;
+    }
+
+    /**
+     * Gets the year the coin was manufactured.
+     * 
+     * @return manufacture year
+     */
+    public int getYear() {
         return manufactureYear;
     }
 
-    public String getFrontImage()
-    {
-        return frontImage;
+    /**
+     * Gets the front image.
+     * 
+     * @return front image
+     */
+    public String getFrontImage() {
+        return FRONT_IMAGE;
     }
 
-    public String getBackImage()
-    {
-        return backImage;
+    /**
+     * Gets the back image.
+     * 
+     * @return back image
+     */
+    public String getBackImage() {
+        return BACK_IMAGE;
     }
 
-    public String getFrontLabel()
-    {
-        return frontLabel;
+    /**
+     * Gets the front label.
+     * 
+     * @return front label
+     */
+    public String getFrontLabel() {
+        return FRONT_LABEL;
     }
 
-    public String getBackLabel()
-    {
-        return backLabel;
+    /**
+     * Gets the back label.
+     * 
+     * @return back label
+     */
+    public String getBackLabel() {
+        return BACK_LABEL;
     }
 
-    public String getValueDescription()
-    {
-        return valueDescription;
+    /**
+     * Gets the value description.
+     * 
+     * @return value description
+     */
+    public String getValueDescription() {
+        return VALUE_DESCRIPTION;
     }
 
-    public Boolean getRidgedEdge()
-    {
-        return ridgedEdge;
+    /**
+     * Returns true if the Dime has a ridged edge.
+     * 
+     * @return true if ridged
+     */
+    public Boolean getRidgedEdge() {
+        return RIDGED_EDGE;
     }
 
-    public String getMetallurgy()
-    {
-        return metallurgy;
+    /**
+     * Gets the metallurgy of the Dime.
+     * 
+     * @return metallurgy
+     */
+    public String getMetallurgy() {
+        return METALLURGY;
     }
 }

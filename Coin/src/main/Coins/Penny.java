@@ -1,93 +1,152 @@
-package Coins;
-public class Penny extends Coin
-{
-    static double value = .01;
-    static String commonName = "Penny";
-    static String frontMotto = "IN GOD WE TRUST";
-    static int manufactureYear;
-    static String frontImage = "A_Lincoln";
-    static String backImage = "Lincoln_Memorial";
-    static String backMotto = "E PLURIBUS UNUM";
-    static String frontLabel = "LIBERTY";
-    static String backLabel = "UNITED STATES OF AMERICA";
-    static String valueDescription = "ONE CENT";
-    static boolean ridgedEdge = false;
-    static String metallurgy = "Copper";
+package coins;
+
+/**
+ * Represents a Penny coin.
+ * 
+ * @author GroupB
+ * @version 1.0
+ */
+public class Penny extends Coin {
+    private static final double VALUE = 0.01;
+    private static final String COMMON_NAME = "Penny";
+    private static final String FRONT_MOTTO = "IN GOD WE TRUST";
+    private static final int DEFAULT_YEAR = 1776;
+    private static int manufactureYear;
+    private static final String FRONT_IMAGE = "A_Lincoln";
+    private static final String BACK_IMAGE = "Lincoln_Memorial";
+    private static final String BACK_MOTTO = "E PLURIBUS UNUM";
+    private static final String FRONT_LABEL = "LIBERTY";
+    private static final String BACK_LABEL = "UNITED STATES OF AMERICA";
+    private static final String VALUE_DESCRIPTION = "ONE CENT";
+    private static final boolean RIDGED_EDGE = false;
+    private static final String METALLURGY = "Copper";
+
     /**
-     * Constructor for objects of class Penny. Sets value of penny to 0.01
+     * Constructor for objects of class Penny.
      */
-    public Penny() 
-    {
-        super(value, commonName, frontMotto, 1776, frontImage, backImage, backMotto, frontLabel, backLabel, valueDescription, ridgedEdge, metallurgy);
+    public Penny() {
+        super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
+            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
+            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
     }
+
     /**
-     * Constructor for the Penny class. Sets the value of a
-     * penny to 0.01 and sets the year
-     * @param year year of coin.
+     * Constructor for the Penny class that sets the year.
+     * 
+     * @param year year of the coin
      */
-    public Penny(int year)
-    {
-        super(value, commonName, frontMotto, year, frontImage, backImage, backMotto, frontLabel, backLabel, valueDescription, ridgedEdge, metallurgy);
+    public Penny(int year) {
+        super(VALUE, COMMON_NAME, FRONT_MOTTO, year,
+            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
+            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
         Penny.manufactureYear = year;
     }
-    
-    public double getValue()
-    {
-        return value;
+
+    /**
+     * Gets the value of the Penny.
+     * 
+     * @return coin value
+     */
+    public double getValue() {
+        return VALUE;
     }
 
-    public String getCommonName()
-    {
-        return commonName;
+    /**
+     * Gets the common name of the Penny.
+     * 
+     * @return common name
+     */
+    public String getCommonName() {
+        return COMMON_NAME;
     }
 
-    public String getFrontMotto()
-    {
-        return frontMotto;
+    /**
+     * Gets the front motto.
+     * 
+     * @return front motto
+     */
+    public String getFrontMotto() {
+        return FRONT_MOTTO;
     }
 
-    public String getBackMotto()
-    {
-        return backMotto;
+    /**
+     * Gets the back motto.
+     * 
+     * @return back motto
+     */
+    public String getBackMotto() {
+        return BACK_MOTTO;
     }
 
-    public int getYear()
-    {
+    /**
+     * Gets the year of manufacture.
+     * 
+     * @return year of coin
+     */
+    public int getYear() {
         return manufactureYear;
     }
 
-    public String getFrontImage()
-    {
-        return frontImage;
+    /**
+     * Gets the front image label.
+     * 
+     * @return front image
+     */
+    public String getFrontImage() {
+        return FRONT_IMAGE;
     }
 
-    public String getBackImage()
-    {
-        return backImage;
+    /**
+     * Gets the back image label.
+     * 
+     * @return back image
+     */
+    public String getBackImage() {
+        return BACK_IMAGE;
     }
 
-    public String getFrontLabel()
-    {
-        return frontLabel;
+    /**
+     * Gets the front label.
+     * 
+     * @return front label
+     */
+    public String getFrontLabel() {
+        return FRONT_LABEL;
     }
 
-    public String getBackLabel()
-    {
-        return backLabel;
+    /**
+     * Gets the back label.
+     * 
+     * @return back label
+     */
+    public String getBackLabel() {
+        return BACK_LABEL;
     }
 
-    public String getValueDescription()
-    {
-        return valueDescription;
+    /**
+     * Gets the value description text.
+     * 
+     * @return value description
+     */
+    public String getValueDescription() {
+        return VALUE_DESCRIPTION;
     }
 
-    public Boolean getRidgedEdge()
-    {
-        return ridgedEdge;
+    /**
+     * Returns true if the Penny has a ridged edge.
+     * 
+     * @return true if ridged edge
+     */
+    public Boolean getRidgedEdge() {
+        return RIDGED_EDGE;
     }
 
-    public String getMetallurgy()
-    {
-        return metallurgy;
+    /**
+     * Gets the metallurgy of the Penny.
+     * 
+     * @return metallurgy
+     */
+    public String getMetallurgy() {
+        return METALLURGY;
     }
 }

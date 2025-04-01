@@ -1,24 +1,30 @@
-package Coins;
-public abstract class Coin
-{
-    double value;
-    String commonName;
-    String frontMotto;
-    int manufactureYear;
-    String frontImage;
-    String backImage;
-    String backMotto;
-    String frontLabel;
-    String backLabel;
-    String valueDescription;
-    boolean ridgedEdge;
-    String metallurgy;
+package coins;
+
+/**
+ * Abstract base class for all coin types.
+ * Provides shared fields and methods for coin metadata.
+ * 
+ * @author GroupB
+ * @version 1.0
+ */
+public abstract class Coin {
+    private double value;
+    private String commonName;
+    private String frontMotto;
+    private int manufactureYear;
+    private String frontImage;
+    private String backImage;
+    private String backMotto;
+    private String frontLabel;
+    private String backLabel;
+    private String valueDescription;
+    private boolean ridgedEdge;
+    private String metallurgy;
 
     public Coin(double value, String commonName, String frontMotto,
-        int manufactureYear, String frontImage, String backImage, String backMotto,
-        String frontLabel, String backLabel, String valueDescription, 
-        boolean ridgedEdge, String metallurgy)
-    {
+        int manufactureYear, String frontImage, String backImage,
+        String backMotto, String frontLabel, String backLabel,
+        String valueDescription, boolean ridgedEdge, String metallurgy) {
         this.value = value;
         this.commonName = commonName;
         this.frontMotto = frontMotto;
@@ -33,19 +39,16 @@ public abstract class Coin
         this.metallurgy = metallurgy;
     }
 
-    public String toString()
-    {
-        String s = String.format("[%s,%.2f,%d,'%s','%s','%s','%s','%s','%s','%s',", 
-            commonName, value, manufactureYear, frontMotto,  backMotto, frontImage, backImage, frontLabel, backLabel, valueDescription);
-        if (ridgedEdge == true)
-        {
-            s += String.format("ridges,'%s']", metallurgy);
-        }
-        else
-        {
-            s += String.format("no ridges,'%s']", metallurgy);
-        }
-
+    @Override
+    public String toString() {
+        String s = String.format(
+            "[%s,%.2f,%d,'%s','%s','%s','%s','%s','%s','%s',",
+            commonName, value, manufactureYear, frontMotto, backMotto,
+            frontImage, backImage, frontLabel, backLabel, valueDescription
+        );
+        s += ridgedEdge
+            ? String.format("ridges,'%s']", metallurgy)
+            : String.format("no ridges,'%s']", metallurgy);
         return s;
     }
 

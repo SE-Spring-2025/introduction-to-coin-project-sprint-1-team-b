@@ -16,7 +16,7 @@ default:
 compile: $(JUNIT5_JAR)
 	-javac -d bin/client -cp .:src/main src/client/*.java
 	-javac -d bin/tests -cp .:$(JUNIT5_JAR):src/main src/tests/*.java
-	-javac -d bin/main -cp . src/main/Coins/*.java
+	-javac -d bin/main -cp . src/main/coins/*.java
 
 test: $(JUNIT5_JAR)
 	java -cp bin/tests:bin/main:$(JUNIT5_JAR) $(JUNIT5_RUNNER) execute --scan-class-path 
@@ -25,7 +25,7 @@ demo: bin/client/client/Demo.class
 	java -cp .:bin/client:bin/main client.Demo
 
 check: styles.xml $(CKSTYLE_LIB)
-	java -jar $(CKSTYLE_LIB) -c ./styles.xml src/main/Coins/*.java
+	java -jar $(CKSTYLE_LIB) -c ./styles.xml src/main/coins/*.java
 
 clean:
 #	Java class files

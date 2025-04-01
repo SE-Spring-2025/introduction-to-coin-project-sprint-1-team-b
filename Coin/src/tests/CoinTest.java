@@ -1,16 +1,25 @@
 package tests;
 
+/**
+ * Unit tests for all coin subclasses to verify correctness of data and behavior.
+ * Tests constructors, getter methods, and the toString method.
+ * 
+ * @author GroupB
+ * @version 1.0
+ */
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
-import Coins.*;
-
+import coins.*;
 
 public class CoinTest {
     private Coin testCoin = new MockCoin();
 	private int currYear = 2025;
 
+    /**
+     * Tests that the constructors for various coins do not throw exceptions.
+     */
     @Test
     public void testConstructors() {
 	// Basically just make sure they don't blow up
@@ -42,6 +51,9 @@ public class CoinTest {
 	assertTrue(true);
     }
 
+    /**
+     * Tests all getter methods for each coin subclass to verify expected values.
+     */
     @Test
     public void testGetters() {
 	if (! testPenny()) fail("penny getters failed");
@@ -55,6 +67,9 @@ public class CoinTest {
 	assertTrue(true);
     }
 
+    /**
+     * Tests the toString method of a coin to ensure formatting is correct.
+     */
     @Test
     public void testToString() {
 	Coin c = new HalfDollar(1999);
@@ -70,9 +85,22 @@ public class CoinTest {
     // private helper methods
     //---------------------------------------------------------
     
+    /**
+     * Compares two doubles for near-equality.
+     * 
+     * @param a first double
+     * @param b second double
+     * @return true if nearly equal, false otherwise
+     */
     private boolean cmpDoubles(double a, double b) {
 	return Math.abs(a-b) < 0.00001;
     }
+    
+    /**
+     * Verifies the getter values of the Penny class.
+     * 
+     * @return true if all values match expected, false otherwise
+     */
     private boolean testPenny() {
 	Coin c = new Penny(currYear);
 	
@@ -85,13 +113,19 @@ public class CoinTest {
 	if (! "A_Lincoln".equals(c.getFrontImage())) return false;
 	if (! "Lincoln_Memorial".equals(c.getBackImage())) return false;
 	if (! "ONE CENT".equals(c.getValueDescription())) return false;
-	if (c.getRidgedEdge() != false) return false;
+	if (Boolean.TRUE.equals(c.getRidgedEdge())) return false;
 	if (! "Copper".equals(c.getMetallurgy())) return false;
 	if (currYear != c.getYear()) return false;
 	    
 	// make it here then didn't fail!
 	return true;
     }
+    
+    /**
+     * Verifies the getter values of the Nickel class.
+     * 
+     * @return true if all values match expected, false otherwise
+     */
     private boolean testNickel() {
 	Coin c = new Nickel(currYear);
 	
@@ -104,13 +138,19 @@ public class CoinTest {
 	if (! "T_Jefferson".equals(c.getFrontImage())) return false;
 	if (! "Jefferson_Memorial".equals(c.getBackImage())) return false;
 	if (! "FIVE CENTS".equals(c.getValueDescription())) return false;
-	if (c.getRidgedEdge() != false) return false;
+	if (Boolean.TRUE.equals(c.getRidgedEdge())) return false;
 	if (! "Cupro-Nickel".equals(c.getMetallurgy())) return false;
 	if (currYear != c.getYear()) return false;
 	
 	// make it here then didn't fail!
 	return true;
     }
+    
+    /**
+     * Verifies the getter values of the Dime class.
+     * 
+     * @return true if all values match expected, false otherwise
+     */
     private boolean testDime() {
 	Coin c = new Dime(currYear);
 	
@@ -123,13 +163,19 @@ public class CoinTest {
 	if (! "F_Roosevelt".equals(c.getFrontImage())) return false;
 	if (! "Torch_Branches".equals(c.getBackImage())) return false;
 	if (! "ONE DIME".equals(c.getValueDescription())) return false;
-	if (c.getRidgedEdge() != true) return false;
+	if (Boolean.FALSE.equals(c.getRidgedEdge())) return false;
 	if (! "Cupro-Nickel".equals(c.getMetallurgy())) return false;
 	if (currYear != c.getYear()) return false;
 	
 	// make it here then didn't fail!
 	return true;
     }
+    
+    /**
+     * Verifies the getter values of the Quarter class.
+     * 
+     * @return true if all values match expected, false otherwise
+     */
     private boolean testQuarter() {
 	Coin c = new Quarter(currYear);
 	
@@ -142,13 +188,19 @@ public class CoinTest {
 	if (! "G_Washington".equals(c.getFrontImage())) return false;
 	if (! "Eagle".equals(c.getBackImage())) return false;
 	if (! "QUARTER DOLLAR".equals(c.getValueDescription())) return false;
-	if (c.getRidgedEdge() != true) return false;
+	if (Boolean.FALSE.equals(c.getRidgedEdge())) return false;
 	if (! "Cupro-Nickel".equals(c.getMetallurgy())) return false;
 	if (currYear != c.getYear()) return false;
 	
 	// make it here then didn't fail!
 	return true;
     }
+    
+    /**
+     * Verifies the getter values of the HalfDollar class.
+     * 
+     * @return true if all values match expected, false otherwise
+     */
     private boolean testHalfDollar() {
 	Coin c = new HalfDollar(currYear);
 	
@@ -161,13 +213,19 @@ public class CoinTest {
 	if (! "J_Kennedy".equals(c.getFrontImage())) return false;
 	if (! "Presidential_Seal".equals(c.getBackImage())) return false;
 	if (! "HALF DOLLAR".equals(c.getValueDescription())) return false;
-	if (c.getRidgedEdge() != true) return false;
+	if (Boolean.FALSE.equals(c.getRidgedEdge())) return false;
 	if (! "Cupro-Nickel".equals(c.getMetallurgy())) return false;
 	if (currYear != c.getYear()) return false;
 	
 	// make it here then didn't fail!
 	return true;
     }
+    
+    /**
+     * Verifies the getter values of the Dollar class.
+     * 
+     * @return true if all values match expected, false otherwise
+     */
     private boolean testDollar() {
 	Coin c = new Dollar(currYear);
 	
@@ -180,13 +238,17 @@ public class CoinTest {
 	if (! "S_Anthony".equals(c.getFrontImage())) return false;
 	if (! "Moon_Eagle".equals(c.getBackImage())) return false;
 	if (! "ONE DOLLAR".equals(c.getValueDescription())) return false;
-	if (c.getRidgedEdge() != true) return false;
+	if (Boolean.FALSE.equals(c.getRidgedEdge())) return false;
 	if (! "Cupro-Nickel".equals(c.getMetallurgy())) return false;
 	if (currYear != c.getYear()) return false;
 	
 	// make it here then didn't fail!
 	return true;
     }
+	
+    /**
+     * Tests the getter methods of the MockCoin specifically.
+     */
 	@Test
 	public void testCoinGetters() {
 		assertEquals(24, testCoin.getValue());
@@ -203,4 +265,3 @@ public class CoinTest {
 		assertEquals("metallurgy", testCoin.getMetallurgy());
 	}
 }
-    

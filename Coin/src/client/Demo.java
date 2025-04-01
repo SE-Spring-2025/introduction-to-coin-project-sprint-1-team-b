@@ -1,6 +1,6 @@
 package client;
 
-import Coins.*;
+import coins.*;
 
 
 import java.util.Scanner;
