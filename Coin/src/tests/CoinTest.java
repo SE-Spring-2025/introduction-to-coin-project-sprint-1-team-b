@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 import Coins.*;
 
+
 public class CoinTest {
     private Coin testCoin = new MockCoin();
 	private int currYear = 2025;
