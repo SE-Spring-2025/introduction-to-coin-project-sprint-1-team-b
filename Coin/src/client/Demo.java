@@ -1,7 +1,6 @@
 package client;
 
-import main.Coins.*;
-
+import coins.*;
 
 import java.util.Scanner;
 
