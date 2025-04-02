@@ -1,9 +1,8 @@
 package client;
 
-import main.Coins.*;
-
-
 import java.util.Scanner;
+
+import main.coins.*;
 
 public class Demo {
     private static Scanner keyboard = new Scanner(System.in);

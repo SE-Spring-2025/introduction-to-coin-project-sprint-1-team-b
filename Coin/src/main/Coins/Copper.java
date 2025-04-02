@@ -1,4 +1,4 @@
-package main.Coins;
+package main.coins;
 
 public class Copper implements Metallurgy {
 

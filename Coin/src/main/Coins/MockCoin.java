@@ -1,4 +1,4 @@
-package main.Coins;
+package main.coins;
 
 /**
  * Represents a mock coin for testing and demonstration purposes.

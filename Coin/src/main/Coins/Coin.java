@@ -1,4 +1,4 @@
-package main.Coins;
+package main.coins;
 
 /**
  * Abstract base class for all coin types.
