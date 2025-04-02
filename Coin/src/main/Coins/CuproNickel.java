@@ -1,4 +1,4 @@
-package main.Coins;
+package coins;
 
 public class CuproNickel implements Metallurgy {
 

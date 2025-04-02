@@ -1,4 +1,4 @@
-package main.Coins;
+package coins;
 
 /**
  * Represents a Quarter coin.
