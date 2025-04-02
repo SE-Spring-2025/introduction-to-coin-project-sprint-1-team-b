@@ -1,4 +1,4 @@
-package coins;
+package main.Coins;
 
 /**
  * Represents a Penny coin.
@@ -19,7 +19,7 @@ public class Penny extends Coin {
     private static final String BACK_LABEL = "UNITED STATES OF AMERICA";
     private static final String VALUE_DESCRIPTION = "ONE CENT";
     private static final boolean RIDGED_EDGE = false;
-    private static final String METALLURGY = "Copper";
+    private static final Metallurgy METALLURGY = new Copper();
 
     /**
      * Constructor for objects of class Penny.
@@ -147,6 +147,6 @@ public class Penny extends Coin {
      * @return metallurgy
      */
     public String getMetallurgy() {
-        return METALLURGY;
+        return METALLURGY.smelt();
     }
 }

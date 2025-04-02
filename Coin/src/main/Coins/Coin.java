@@ -1,4 +1,4 @@
-package coins;
+package main.Coins;
 
 /**
  * Abstract base class for all coin types.
@@ -20,11 +20,12 @@ public abstract class Coin {
     private String valueDescription;
     private boolean ridgedEdge;
     private String metallurgy;
+    private Metallurgy smelter;;
 
     public Coin(double value, String commonName, String frontMotto,
         int manufactureYear, String frontImage, String backImage,
         String backMotto, String frontLabel, String backLabel,
-        String valueDescription, boolean ridgedEdge, String metallurgy) {
+        String valueDescription, boolean ridgedEdge, Metallurgy smelter) {
         this.value = value;
         this.commonName = commonName;
         this.frontMotto = frontMotto;
@@ -36,7 +37,8 @@ public abstract class Coin {
         this.backLabel = backLabel;
         this.valueDescription = valueDescription;
         this.ridgedEdge = ridgedEdge;
-        this.metallurgy = metallurgy;
+        smelt();
+
     }
 
     @Override
@@ -47,9 +49,14 @@ public abstract class Coin {
             frontImage, backImage, frontLabel, backLabel, valueDescription
         );
         s += ridgedEdge
-            ? String.format("ridges,'%s']", metallurgy)
-            : String.format("no ridges,'%s']", metallurgy);
+            ? String.format("ridges,'%s']", smelter)
+            : String.format("no ridges,'%s']", smelter);
         return s;
+    }
+
+    public void smelt()
+    {
+        this.metallurgy = smelter.smelt();
     }
 
     public abstract double getValue();

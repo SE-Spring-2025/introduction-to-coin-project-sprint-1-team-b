@@ -1,5 +1,11 @@
-package coins;
+package main.Coins;
 
-public class Copper {
+public class Copper implements Metallurgy {
+
+    private final String metallurgy = "Copper";
     
+    public String smelt()
+    {
+        return metallurgy;
+    }
 }

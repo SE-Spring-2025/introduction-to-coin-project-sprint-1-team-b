@@ -1,4 +1,4 @@
-package coins;
+package main.Coins;
 
 /**
  * Represents a Quarter coin.
@@ -19,7 +19,7 @@ public class Quarter extends Coin {
     private static final String BACK_LABEL = "UNITED STATES OF AMERICA";
     private static final String VALUE_DESCRIPTION = "QUARTER DOLLAR";
     private static final boolean RIDGED_EDGE = true;
-    private static final String METALLURGY = "Cupro-Nickel";
+    private static final Metallurgy METALLURGY = new CuproNickel();
 
     /**
      * Constructor for objects of class Quarter. Sets value of quarter to 0.25.
@@ -135,6 +135,6 @@ public class Quarter extends Coin {
      * @return metallurgy
      */
     public String getMetallurgy() {
-        return METALLURGY;
+        return METALLURGY.smelt();
     }
 }

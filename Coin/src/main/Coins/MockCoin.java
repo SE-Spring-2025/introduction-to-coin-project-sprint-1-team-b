@@ -1,4 +1,4 @@
-package coins;
+package main.Coins;
 
 /**
  * Represents a mock coin for testing and demonstration purposes.
@@ -19,7 +19,7 @@ public class MockCoin extends Coin {
     private static final String BACK_LABEL = "backLabel";
     private static final String VALUE_DESCRIPTION = "twenty-four cents";
     private static final boolean RIDGED_EDGE = false;
-    private static final String METALLURGY = "metallurgy";
+    private static final Metallurgy METALLURGY = new CuproNickel();
     private static double value = DEFAULT_VALUE;
 
     /**
@@ -160,6 +160,6 @@ public class MockCoin extends Coin {
      * @return metallurgy
      */
     public String getMetallurgy() {
-        return METALLURGY;
+        return METALLURGY.smelt();
     }
 }
