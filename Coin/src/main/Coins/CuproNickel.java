@@ -2,10 +2,9 @@ package coins;
 
 public class CuproNickel implements Metallurgy {
 
-    private final String metallurgy = "Cupro_Nickel";
+    private static final String METALLURGY = "Cupro-Nickel";
     
-    public String smelt()
-    {
-        return metallurgy;
+    public String smelt() {
+        return METALLURGY;
     }
 }
