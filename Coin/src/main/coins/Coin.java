@@ -20,11 +20,13 @@ public abstract class Coin {
     private String valueDescription;
     private boolean ridgedEdge;
     private String metallurgy;
+    private Metallurgy smelter;
+
 
     public Coin(double value, String commonName, String frontMotto,
         int manufactureYear, String frontImage, String backImage,
         String backMotto, String frontLabel, String backLabel,
-        String valueDescription, boolean ridgedEdge, String metallurgy) {
+        String valueDescription, boolean ridgedEdge, Metallurgy smelter) {
         this.value = value;
         this.commonName = commonName;
         this.frontMotto = frontMotto;
@@ -36,11 +38,13 @@ public abstract class Coin {
         this.backLabel = backLabel;
         this.valueDescription = valueDescription;
         this.ridgedEdge = ridgedEdge;
-        this.metallurgy = metallurgy;
+        this.smelter = smelter;
+        this.smelt();
     }
 
     @Override
     public String toString() {
+        this.smelt();
         String s = String.format(
             "[%s,%.2f,%d,'%s','%s','%s','%s','%s','%s','%s',",
             commonName, value, manufactureYear, frontMotto, backMotto,
@@ -50,6 +54,10 @@ public abstract class Coin {
             ? String.format("ridges,'%s']", metallurgy)
             : String.format("no ridges,'%s']", metallurgy);
         return s;
+    }
+
+    public void smelt() {
+        this.metallurgy = smelter.smelt();
     }
 
     public abstract double getValue();

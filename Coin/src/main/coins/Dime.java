@@ -19,7 +19,7 @@ public class Dime extends Coin {
     private static final String BACK_LABEL = "UNITED STATES OF AMERICA";
     private static final String VALUE_DESCRIPTION = "ONE DIME";
     private static final boolean RIDGED_EDGE = true;
-    private static final String METALLURGY = "Cupro-Nickel";
+    private static final Metallurgy METALLURGY = new CuproNickel();
 
     /**
      * Constructor for the Dime class.
@@ -147,6 +147,6 @@ public class Dime extends Coin {
      * @return metallurgy
      */
     public String getMetallurgy() {
-        return METALLURGY;
+        return METALLURGY.smelt();
     }
 }

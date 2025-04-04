@@ -19,7 +19,7 @@ public class Nickel extends Coin {
     private static final String BACK_LABEL = "UNITED STATES OF AMERICA";
     private static final String VALUE_DESCRIPTION = "FIVE CENTS";
     private static final boolean RIDGED_EDGE = false;
-    private static final String METALLURGY = "Cupro-Nickel";
+    private static final Metallurgy METALLURGY = new CuproNickel();
 
     /**
      * Constructor for objects of class Nickel.
@@ -147,6 +147,6 @@ public class Nickel extends Coin {
      * @return metallurgy
      */
     public String getMetallurgy() {
-        return METALLURGY;
+        return METALLURGY.smelt();
     }
 }

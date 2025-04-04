@@ -2,7 +2,6 @@ package client;
 
 import coins.*;
 
-
 import java.util.Scanner;
 
 public class Demo {
