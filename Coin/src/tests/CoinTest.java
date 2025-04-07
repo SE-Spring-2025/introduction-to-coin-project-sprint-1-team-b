@@ -262,6 +262,23 @@ public class CoinTest {
 		assertEquals("backLabel", testCoin.getBackLabel());
 		assertEquals("twenty-four cents", testCoin.getValueDescription());
 		assertEquals(false, testCoin.getRidgedEdge());
-		assertEquals("metallurgy", testCoin.getMetallurgy());
+		assertEquals("Cupro-Nickel", testCoin.getMetallurgy());
+	}
+
+	/**
+	 * Test the concrete Metallurgy implementations of the interface. (The interface does not
+     * need a test because it has no executable code.)
+	 */
+	public void testSmelt() {
+	Metallurgy copper = new Copper();
+	Metallurgy cuproNickel = new CuproNickel();
+
+	Coin copperCoin = new MockCoin();
+	copperCoin.smelt();
+	assertEquals("Copper", copperCoin.getMetallurgy());
+
+	Coin cuproNickelCoin = new MockCoin();
+	cuproNickelCoin.smelt();
+	assertEquals("Cupro-Nickel", cuproNickelCoin.getMetallurgy());
 	}
 }
