@@ -1,4 +1,4 @@
-package coins;
+package main.coins;
 
 /**
  * Represents a Penny coin.

@@ -1,45 +1,45 @@
-package coins;
+package main.coins;
 
 /**
- * Represents a Dollar coin.
+ * Represents a HalfDollar coin.
  * 
  * @author GroupB
  * @version 1.0
  */
-public class Dollar extends Coin {
-    private static final double VALUE = 1.00;
-    private static final String COMMON_NAME = "Dollar";
+public class HalfDollar extends Coin {
+    private static final double VALUE = 0.5;
+    private static final String COMMON_NAME = "HalfDollar";
     private static final String FRONT_MOTTO = "IN GOD WE TRUST";
     private static final int DEFAULT_YEAR = 1776;
     private static int manufactureYear;
-    private static final String FRONT_IMAGE = "S_Anthony";
-    private static final String BACK_IMAGE = "Moon_Eagle";
+    private static final String FRONT_IMAGE = "J_Kennedy";
+    private static final String BACK_IMAGE = "Presidential_Seal";
     private static final String BACK_MOTTO = "E PLURIBUS UNUM";
     private static final String FRONT_LABEL = "LIBERTY";
     private static final String BACK_LABEL = "UNITED STATES OF AMERICA";
-    private static final String VALUE_DESCRIPTION = "ONE DOLLAR";
+    private static final String VALUE_DESCRIPTION = "HALF DOLLAR";
     private static final boolean RIDGED_EDGE = true;
     private static final Metallurgy METALLURGY = new CuproNickel();
 
     /**
-     * Constructor for the Dollar class. Sets the value to 1.0.
+     * Constructor for the HalfDollar class.
      */
-    public Dollar() {
+    public HalfDollar() {
         super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
             FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
             BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
     }
 
     /**
-     * Constructor for the Dollar class with specified year.
+     * Constructor for the HalfDollar class with a specified year.
      * 
-     * @param year year of coin
+     * @param year year of the coin
      */
-    public Dollar(int year) {
+    public HalfDollar(int year) {
         super(VALUE, COMMON_NAME, FRONT_MOTTO, year,
             FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
             BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
-        Dollar.manufactureYear = year;
+        HalfDollar.manufactureYear = year;
     }
 
     /**

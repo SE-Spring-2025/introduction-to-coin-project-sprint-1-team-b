@@ -1,58 +1,58 @@
-package coins;
+package main.coins;
 
 /**
- * Represents a Nickel coin.
+ * Represents a Dollar coin.
  * 
  * @author GroupB
  * @version 1.0
  */
-public class Nickel extends Coin {
-    private static final double VALUE = 0.05;
-    private static final String COMMON_NAME = "Nickel";
+public class Dollar extends Coin {
+    private static final double VALUE = 1.00;
+    private static final String COMMON_NAME = "Dollar";
     private static final String FRONT_MOTTO = "IN GOD WE TRUST";
     private static final int DEFAULT_YEAR = 1776;
     private static int manufactureYear;
-    private static final String FRONT_IMAGE = "T_Jefferson";
-    private static final String BACK_IMAGE = "Jefferson_Memorial";
+    private static final String FRONT_IMAGE = "S_Anthony";
+    private static final String BACK_IMAGE = "Moon_Eagle";
     private static final String BACK_MOTTO = "E PLURIBUS UNUM";
     private static final String FRONT_LABEL = "LIBERTY";
     private static final String BACK_LABEL = "UNITED STATES OF AMERICA";
-    private static final String VALUE_DESCRIPTION = "FIVE CENTS";
-    private static final boolean RIDGED_EDGE = false;
+    private static final String VALUE_DESCRIPTION = "ONE DOLLAR";
+    private static final boolean RIDGED_EDGE = true;
     private static final Metallurgy METALLURGY = new CuproNickel();
 
     /**
-     * Constructor for objects of class Nickel.
+     * Constructor for the Dollar class. Sets the value to 1.0.
      */
-    public Nickel() {
+    public Dollar() {
         super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
             FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
             BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
     }
 
     /**
-     * Constructor for the Nickel class that sets the year.
+     * Constructor for the Dollar class with specified year.
      * 
      * @param year year of coin
      */
-    public Nickel(int year) {
+    public Dollar(int year) {
         super(VALUE, COMMON_NAME, FRONT_MOTTO, year,
             FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
             BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
-        Nickel.manufactureYear = year;
+        Dollar.manufactureYear = year;
     }
 
     /**
-     * Gets the value of the Nickel.
+     * Gets the coin's value.
      * 
-     * @return coin value
+     * @return value of the coin
      */
     public double getValue() {
         return VALUE;
     }
 
     /**
-     * Gets the common name of the Nickel.
+     * Gets the coin's common name.
      * 
      * @return common name
      */
@@ -61,7 +61,7 @@ public class Nickel extends Coin {
     }
 
     /**
-     * Gets the front motto.
+     * Gets the coin's front motto.
      * 
      * @return front motto
      */
@@ -70,7 +70,7 @@ public class Nickel extends Coin {
     }
 
     /**
-     * Gets the back motto.
+     * Gets the coin's back motto.
      * 
      * @return back motto
      */
@@ -79,16 +79,16 @@ public class Nickel extends Coin {
     }
 
     /**
-     * Gets the year of manufacture.
+     * Gets the year the coin was manufactured.
      * 
-     * @return year of coin
+     * @return year of manufacture
      */
     public int getYear() {
         return manufactureYear;
     }
 
     /**
-     * Gets the front image label.
+     * Gets the coin's front image.
      * 
      * @return front image
      */
@@ -97,7 +97,7 @@ public class Nickel extends Coin {
     }
 
     /**
-     * Gets the back image label.
+     * Gets the coin's back image.
      * 
      * @return back image
      */
@@ -106,7 +106,7 @@ public class Nickel extends Coin {
     }
 
     /**
-     * Gets the front label.
+     * Gets the coin's front label.
      * 
      * @return front label
      */
@@ -115,7 +115,7 @@ public class Nickel extends Coin {
     }
 
     /**
-     * Gets the back label.
+     * Gets the coin's back label.
      * 
      * @return back label
      */
@@ -124,7 +124,7 @@ public class Nickel extends Coin {
     }
 
     /**
-     * Gets the value description text.
+     * Gets the description of the coin's value.
      * 
      * @return value description
      */
@@ -133,16 +133,16 @@ public class Nickel extends Coin {
     }
 
     /**
-     * Returns true if the Nickel has a ridged edge.
+     * Indicates whether the coin has a ridged edge.
      * 
-     * @return true if ridged edge
+     * @return true if ridged, false otherwise
      */
     public Boolean getRidgedEdge() {
         return RIDGED_EDGE;
     }
 
     /**
-     * Gets the metallurgy of the Nickel.
+     * Gets the metallurgy of the coin.
      * 
      * @return metallurgy
      */
