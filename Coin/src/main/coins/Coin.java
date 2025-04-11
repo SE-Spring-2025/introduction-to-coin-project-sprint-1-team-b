@@ -22,6 +22,7 @@ public abstract class Coin {
     private String metallurgy;
     private Metallurgy smelter;
 
+    //add an inner class
 
     public Coin(double value, String commonName, String frontMotto,
         int manufactureYear, String frontImage, String backImage,
