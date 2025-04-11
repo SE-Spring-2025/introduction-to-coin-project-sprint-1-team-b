@@ -1,4 +1,4 @@
-package main.coins;
+package coins;
 
 public interface Metallurgy {
     public String smelt();

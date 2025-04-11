@@ -1,4 +1,4 @@
-package main.coins;
+package coins;
 
 /**
  * Represents a Dollar coin.
