@@ -23,16 +23,20 @@ public class Quarter extends Coin {
 
     /**
      * Constructor for objects of class Quarter. Sets value of quarter to 0.25.
+     * Increments the quarter count in the CoinCounter.
      */
     public Quarter() {
         super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
             FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
             BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        coinCounter.incrementQuarter();
     }
 
     /**
      * Constructor for the Quarter class. Sets the value of a
      * quarter to 0.25 and sets the year.
+     * Increments the quarter count in the CoinCounter.
+     * 
      * @param year year of coin
      */
     public Quarter(int year) {
@@ -40,6 +44,7 @@ public class Quarter extends Coin {
             FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
             BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
         Quarter.manufactureYear = year;
+        coinCounter.incrementQuarter();
     }
 
     /**

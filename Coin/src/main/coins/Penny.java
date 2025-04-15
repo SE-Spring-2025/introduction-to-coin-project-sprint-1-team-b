@@ -23,15 +23,18 @@ public class Penny extends Coin {
 
     /**
      * Constructor for objects of class Penny.
+     * Increments the penny count in the CoinCounter.
      */
     public Penny() {
         super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
             FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
             BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        coinCounter.incrementPenny();
     }
 
     /**
      * Constructor for the Penny class that sets the year.
+     * Increments the penny count in the CoinCounter.
      * 
      * @param year year of the coin
      */
@@ -40,6 +43,7 @@ public class Penny extends Coin {
             FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
             BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
         Penny.manufactureYear = year;
+        coinCounter.incrementPenny();
     }
 
     /**
