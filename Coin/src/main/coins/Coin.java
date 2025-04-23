@@ -40,7 +40,6 @@ public abstract class Coin {
         this.value = value;
         this.commonName = commonName;
         this.smelter = smelter;
-        this.smelt();
     }
 
     /**
@@ -55,7 +54,7 @@ public abstract class Coin {
 
     @Override
     public String toString() {
-        this.smelt();
+        this.smelt(this);
         String s = String.format(
             "[%s,%.2f,%d,'%s','%s','%s','%s','%s','%s','%s',",
             commonName, value, manufactureYear, frontMotto, backMotto,
@@ -67,8 +66,8 @@ public abstract class Coin {
         return s;
     }
 
-    public void smelt() {
-        this.metallurgy = smelter.smelt();
+    public void smelt(Coin c) {
+        this.metallurgy = smelter.smelt(c);
     }
 
     public abstract double getValue();

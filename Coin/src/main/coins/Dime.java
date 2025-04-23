@@ -9,25 +9,13 @@ package coins;
 public class Dime extends Coin {
     private static final double VALUE = 0.1;
     private static final String COMMON_NAME = "Dime";
-    private static final String FRONT_MOTTO = "IN GOD WE TRUST";
-    private static final int DEFAULT_YEAR = 1776;
-    private static int manufactureYear;
-    private static final String FRONT_IMAGE = "F_Roosevelt";
-    private static final String BACK_IMAGE = "Torch_Branches";
-    private static final String BACK_MOTTO = "E PLURIBUS UNUM";
-    private static final String FRONT_LABEL = "LIBERTY";
-    private static final String BACK_LABEL = "UNITED STATES OF AMERICA";
-    private static final String VALUE_DESCRIPTION = "ONE DIME";
-    private static final boolean RIDGED_EDGE = true;
     private static final Metallurgy METALLURGY = new CuproNickel();
 
     /**
      * Constructor for the Dime class.
      */
     public Dime() {
-        super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
-            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
-            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(VALUE, COMMON_NAME, METALLURGY);
     }
 
     /**
@@ -36,9 +24,7 @@ public class Dime extends Coin {
      * @param year year of the coin
      */
     public Dime(int year) {
-        super(VALUE, COMMON_NAME, FRONT_MOTTO, year,
-            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
-            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(VALUE, COMMON_NAME, METALLURGY);
         Dime.manufactureYear = year;
     }
 
