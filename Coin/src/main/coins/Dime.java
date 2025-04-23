@@ -145,4 +145,13 @@ public class Dime extends Coin {
     public String getMetallurgy() {
         return METALLURGY.smelt();
     }
+
+    /**
+     * Manufacture Methods
+     */
+
+     protected Coin imprintFront(Coin c) {
+        c.frontImage=FRONT_IMAGE;
+        return c;
+     }
 }

@@ -26,9 +26,7 @@ public class Penny extends Coin {
      * Increments the penny count in the CoinCounter.
      */
     public Penny() {
-        super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
-            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
-            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(VALUE, COMMON_NAME, METALLURGY);
         coinCounter.incrementPenny();
     }
 
@@ -39,9 +37,7 @@ public class Penny extends Coin {
      * @param year year of the coin
      */
     public Penny(int year) {
-        super(VALUE, COMMON_NAME, FRONT_MOTTO, year,
-            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
-            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(VALUE, COMMON_NAME, METALLURGY);
         Penny.manufactureYear = year;
         coinCounter.incrementPenny();
     }
