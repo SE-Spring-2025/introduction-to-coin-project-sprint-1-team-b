@@ -30,36 +30,15 @@ public abstract class Coin {
     private Metallurgy smelter;
 
     /**
-     * Constructor for the Coin class.
+     * Blob Constructor for the Coin class.
      * 
      * @param value           The monetary value of the coin.
      * @param commonName      The common name of the coin.
-     * @param frontMotto      The motto on the front of the coin.
-     * @param manufactureYear The year the coin was manufactured.
-     * @param frontImage      The image on the front of the coin.
-     * @param backImage       The image on the back of the coin.
-     * @param backMotto       The motto on the back of the coin.
-     * @param frontLabel      The label on the front of the coin.
-     * @param backLabel       The label on the back of the coin.
-     * @param valueDescription The description of the coin's value.
-     * @param ridgedEdge      Whether the coin has a ridged edge.
      * @param smelter         The metallurgy composition of the coin.
      */
-    public Coin(double value, String commonName, String frontMotto,
-        int manufactureYear, String frontImage, String backImage,
-        String backMotto, String frontLabel, String backLabel,
-        String valueDescription, boolean ridgedEdge, Metallurgy smelter) {
+    public Coin(double value, String commonName, Metallurgy smelter) {
         this.value = value;
         this.commonName = commonName;
-        this.frontMotto = frontMotto;
-        this.manufactureYear = manufactureYear;
-        this.frontImage = frontImage;
-        this.backImage = backImage;
-        this.backMotto = backMotto;
-        this.frontLabel = frontLabel;
-        this.backLabel = backLabel;
-        this.valueDescription = valueDescription;
-        this.ridgedEdge = ridgedEdge;
         this.smelter = smelter;
         this.smelt();
     }
@@ -187,4 +166,5 @@ public abstract class Coin {
             }
         }
     }
+    
 }
