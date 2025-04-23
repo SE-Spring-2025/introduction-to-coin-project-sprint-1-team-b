@@ -164,6 +164,11 @@ public abstract class Coin {
                 observer.update();
             }
         }
+        public Coin manufacture(Coin c0) {
+            Coin c1 = c0.smelt();
+
+            return c1;
+        }
     }
     
 }

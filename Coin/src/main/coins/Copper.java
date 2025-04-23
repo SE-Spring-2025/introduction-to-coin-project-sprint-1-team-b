@@ -4,7 +4,7 @@ public class Copper implements Metallurgy {
 
     private final String metallurgy = "Copper";
     
-    public String smelt(Coin c) {
+    public String smelt() {
         return metallurgy;
     }
 }

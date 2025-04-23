@@ -4,7 +4,7 @@ public class CuproNickel implements Metallurgy {
 
     private static final String METALLURGY = "Cupro-Nickel";
     
-    public String smelt(Coin c) {
+    public String smelt() {
         return METALLURGY;
     }
 }

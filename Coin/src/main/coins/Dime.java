@@ -9,6 +9,16 @@ package coins;
 public class Dime extends Coin {
     private static final double VALUE = 0.1;
     private static final String COMMON_NAME = "Dime";
+    private static final String FRONT_MOTTO = "IN GOD WE TRUST";
+    private static final int DEFAULT_YEAR = 1776;
+    private static int manufactureYear;
+    private static final String FRONT_IMAGE = "F_Roosevelt";
+    private static final String BACK_IMAGE = "Torch_Branches";
+    private static final String BACK_MOTTO = "E PLURIBUS UNUM";
+    private static final String FRONT_LABEL = "LIBERTY";
+    private static final String BACK_LABEL = "UNITED STATES OF AMERICA";
+    private static final String VALUE_DESCRIPTION = "ONE DIME";
+    private static final boolean RIDGED_EDGE = true;
     private static final Metallurgy METALLURGY = new CuproNickel();
 
     /**

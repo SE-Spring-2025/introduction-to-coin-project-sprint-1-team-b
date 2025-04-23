@@ -26,9 +26,7 @@ public class Quarter extends Coin {
      * Increments the quarter count in the CoinCounter.
      */
     public Quarter() {
-        super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
-            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
-            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(VALUE, COMMON_NAME, METALLURGY);
         coinCounter.incrementQuarter();
     }
 
@@ -40,9 +38,7 @@ public class Quarter extends Coin {
      * @param year year of coin
      */
     public Quarter(int year) {
-        super(VALUE, COMMON_NAME, FRONT_MOTTO, year,
-            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
-            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(VALUE, COMMON_NAME, METALLURGY);
         Quarter.manufactureYear = year;
         coinCounter.incrementQuarter();
     }

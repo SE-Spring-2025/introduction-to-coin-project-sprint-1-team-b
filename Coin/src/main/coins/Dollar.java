@@ -25,9 +25,7 @@ public class Dollar extends Coin {
      * Constructor for the Dollar class. Sets the value to 1.0.
      */
     public Dollar() {
-        super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
-            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
-            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(VALUE, COMMON_NAME, METALLURGY);
     }
 
     /**
@@ -36,9 +34,7 @@ public class Dollar extends Coin {
      * @param year year of coin
      */
     public Dollar(int year) {
-        super(VALUE, COMMON_NAME, FRONT_MOTTO, year,
-            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
-            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(VALUE, COMMON_NAME, METALLURGY);
         Dollar.manufactureYear = year;
     }
 
