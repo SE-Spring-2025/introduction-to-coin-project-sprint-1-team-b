@@ -67,6 +67,35 @@ public class CoinTest {
 	assertTrue(true);
     }
 
+	@Test
+	public void testManufacture() {
+		Coin c = new Penny();
+		if (!"Penny".equals(c.getCommonName())) fail("getCommonName failed.");
+		if (!cmpDoubles(c.getValue(), .01)) fail("getValue failed.");
+		if ("IN GOD WE TRUST".equals(c.getFrontMotto())) fail("getFrontMotto failed.");
+		if ("E PLURIBUS UNUM".equals(c.getBackMotto())) fail("getBackMotto failed");
+		if ("LIBERTY".equals(c.getFrontLabel())) fail("getFrontLabel failed.");
+		if ("UNITED STATES OF AMERICA".equals(c.getBackLabel())) fail("getBackLabel failed.");
+		if ("A_Lincoln".equals(c.getFrontImage())) fail("getFrontImage failed");
+		if ("Lincoln_Memorial".equals(c.getBackImage())) fail("getBackImage failed");
+		if ("ONE CENT".equals(c.getValueDescription())) fail("getValueDescription failed");
+		if (Boolean.TRUE.equals(c.getRidgedEdge())) fail("getRidgedEdge failed");
+		if ("Copper".equals(c.getMetallurgy())) fail("getMetallurgy failed");
+		if (1776 == c.getYear()) fail("getYear failed.");
+		c = c.manufacture(c);
+		if (! "Penny".equals(c.getCommonName())) fail("getCommonName failed.");
+		if (! cmpDoubles(c.getValue(), .01)) fail("getValue failed.");
+		if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) fail("getFrontMotto failed.");
+		if (! "E PLURIBUS UNUM".equals(c.getBackMotto())) fail("getBackMotto failed");
+		if (! "LIBERTY".equals(c.getFrontLabel())) fail("getFrontLabel failed.");
+		if (! "UNITED STATES OF AMERICA".equals(c.getBackLabel())) fail("getBackLabel failed.");
+		if (! "A_Lincoln".equals(c.getFrontImage())) fail("getFrontImage failed");
+		if (! "Lincoln_Memorial".equals(c.getBackImage())) fail("getBackImage failed");
+		if (! "ONE CENT".equals(c.getValueDescription())) fail("getValueDescription failed");
+		if (Boolean.TRUE.equals(c.getRidgedEdge())) fail("getRidgedEdge failed");
+		if (! "Copper".equals(c.getMetallurgy())) fail("getMetallurgy failed");
+		if (1776 != c.getYear()) fail("getYear failed.");
+	}
     /**
      * Tests the toString method of a coin to ensure formatting is correct.
      */
@@ -103,7 +132,7 @@ public class CoinTest {
      */
     private boolean testPenny() {
 	Coin c = new Penny(currYear);
-	
+	c = c.manufacture(c);
 	if (! "Penny".equals(c.getCommonName())) return false;
 	if (! cmpDoubles(c.getValue(), .01)) return false;
 	if (! "IN GOD WE TRUST".equals(c.getFrontMotto())) return false;
@@ -281,4 +310,5 @@ public class CoinTest {
 	cuproNickelCoin.smelt();
 	assertEquals("Cupro-Nickel", cuproNickelCoin.getMetallurgy());
 	}
+
 }
