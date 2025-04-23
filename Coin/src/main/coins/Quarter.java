@@ -44,102 +44,6 @@ public class Quarter extends Coin {
     }
 
     /**
-     * Gets the monetary value of the Quarter.
-     * @return value of the coin
-     */
-    public double getValue() {
-        return VALUE;
-    }
-
-    /**
-     * Gets the common name of the Quarter.
-     * @return common name
-     */
-    public String getCommonName() {
-        return COMMON_NAME;
-    }
-
-    /**
-     * Gets the front motto of the Quarter.
-     * @return front motto
-     */
-    public String getFrontMotto() {
-        return FRONT_MOTTO;
-    }
-
-    /**
-     * Gets the back motto of the Quarter.
-     * @return back motto
-     */
-    public String getBackMotto() {
-        return BACK_MOTTO;
-    }
-
-    /**
-     * Gets the year of manufacture of the Quarter.
-     * @return manufacture year
-     */
-    public int getYear() {
-        return manufactureYear;
-    }
-
-    /**
-     * Gets the front image of the Quarter.
-     * @return front image
-     */
-    public String getFrontImage() {
-        return FRONT_IMAGE;
-    }
-
-    /**
-     * Gets the back image of the Quarter.
-     * @return back image
-     */
-    public String getBackImage() {
-        return BACK_IMAGE;
-    }
-
-    /**
-     * Gets the front label of the Quarter.
-     * @return front label
-     */
-    public String getFrontLabel() {
-        return FRONT_LABEL;
-    }
-
-    /**
-     * Gets the back label of the Quarter.
-     * @return back label
-     */
-    public String getBackLabel() {
-        return BACK_LABEL;
-    }
-
-    /**
-     * Gets the value description of the Quarter.
-     * @return value description
-     */
-    public String getValueDescription() {
-        return VALUE_DESCRIPTION;
-    }
-
-    /**
-     * Returns true if the Quarter has a ridged edge.
-     * @return true if ridged edge
-     */
-    public Boolean getRidgedEdge() {
-        return RIDGED_EDGE;
-    }
-
-    /**
-     * Gets the metallurgy composition of the Quarter.
-     * @return metallurgy
-     */
-    public String getMetallurgy() {
-        return METALLURGY.smelt();
-    }
-
-    /**
      * Manufacture Methods
      */
 
@@ -156,6 +60,9 @@ public class Quarter extends Coin {
      protected Coin printFront(Coin c) {
         c.frontMotto=FRONT_MOTTO;
         c.frontLabel=FRONT_LABEL;
+        if(c.manufactureYear == 0) {
+            c.manufactureYear=DEFAULT_YEAR;
+        } else c.manufactureYear=DEFAULT_YEAR;
         return c;
      }
 
@@ -167,6 +74,7 @@ public class Quarter extends Coin {
      protected Coin printBack(Coin c) {
         c.backLabel=BACK_LABEL;
         c.backMotto=BACK_MOTTO;
+        c.valueDescription=VALUE_DESCRIPTION;
         return c;
      }
 }

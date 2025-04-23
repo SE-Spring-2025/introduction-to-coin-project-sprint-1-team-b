@@ -38,114 +38,6 @@ public class Dollar extends Coin {
         Dollar.manufactureYear = year;
     }
 
-    /**
-     * Gets the coin's value.
-     * 
-     * @return value of the coin
-     */
-    public double getValue() {
-        return VALUE;
-    }
-
-    /**
-     * Gets the coin's common name.
-     * 
-     * @return common name
-     */
-    public String getCommonName() {
-        return COMMON_NAME;
-    }
-
-    /**
-     * Gets the coin's front motto.
-     * 
-     * @return front motto
-     */
-    public String getFrontMotto() {
-        return FRONT_MOTTO;
-    }
-
-    /**
-     * Gets the coin's back motto.
-     * 
-     * @return back motto
-     */
-    public String getBackMotto() {
-        return BACK_MOTTO;
-    }
-
-    /**
-     * Gets the year the coin was manufactured.
-     * 
-     * @return year of manufacture
-     */
-    public int getYear() {
-        return manufactureYear;
-    }
-
-    /**
-     * Gets the coin's front image.
-     * 
-     * @return front image
-     */
-    public String getFrontImage() {
-        return FRONT_IMAGE;
-    }
-
-    /**
-     * Gets the coin's back image.
-     * 
-     * @return back image
-     */
-    public String getBackImage() {
-        return BACK_IMAGE;
-    }
-
-    /**
-     * Gets the coin's front label.
-     * 
-     * @return front label
-     */
-    public String getFrontLabel() {
-        return FRONT_LABEL;
-    }
-
-    /**
-     * Gets the coin's back label.
-     * 
-     * @return back label
-     */
-    public String getBackLabel() {
-        return BACK_LABEL;
-    }
-
-    /**
-     * Gets the description of the coin's value.
-     * 
-     * @return value description
-     */
-    public String getValueDescription() {
-        return VALUE_DESCRIPTION;
-    }
-
-    /**
-     * Indicates whether the coin has a ridged edge.
-     * 
-     * @return true if ridged, false otherwise
-     */
-    public Boolean getRidgedEdge() {
-        return RIDGED_EDGE;
-    }
-
-    /**
-     * Gets the metallurgy of the coin.
-     * 
-     * @return metallurgy
-     */
-    public String getMetallurgy() {
-        return METALLURGY.smelt();
-    }
-
     
     /**
      * Manufacture Methods
@@ -164,6 +56,9 @@ public class Dollar extends Coin {
      protected Coin printFront(Coin c) {
         c.frontMotto=FRONT_MOTTO;
         c.frontLabel=FRONT_LABEL;
+        if(c.manufactureYear == 0) {
+            c.manufactureYear=DEFAULT_YEAR;
+        } else c.manufactureYear=DEFAULT_YEAR;
         return c;
      }
 
@@ -175,6 +70,7 @@ public class Dollar extends Coin {
      protected Coin printBack(Coin c) {
         c.backLabel=BACK_LABEL;
         c.backMotto=BACK_MOTTO;
+        c.valueDescription=VALUE_DESCRIPTION;
         return c;
      }
 }

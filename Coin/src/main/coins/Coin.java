@@ -70,29 +70,53 @@ public abstract class Coin {
         this.metallurgy = smelter.smelt();
     }
 
-    public abstract double getValue();
+    public double getValue() {
+        return value;
+    }
 
-    public abstract String getCommonName();
+    public String getCommonName() {
+        return commonName;
+    }
 
-    public abstract String getFrontMotto();
+    public String getFrontMotto() {
+        return frontMotto;
+    }
 
-    public abstract String getBackMotto();
+    public String getBackMotto() {
+        return backMotto;
+    }
 
-    public abstract int getYear();
+    public int getYear() {
+        return manufactureYear;
+    }
 
-    public abstract String getFrontImage();
+    public String getFrontImage() {
+        return frontImage;
+    }
 
-    public abstract String getBackImage();
+    public String getBackImage() {
+        return backImage;
+    }
 
-    public abstract String getFrontLabel();
+    public String getFrontLabel() {
+        return frontLabel;
+    }
 
-    public abstract String getBackLabel();
+    public String getBackLabel() {
+        return backLabel;
+    }
 
-    public abstract String getValueDescription();
+    public String getValueDescription() {
+        return valueDescription;
+    }
 
-    public abstract Boolean getRidgedEdge();
+    public Boolean getRidgedEdge() {
+        return ridgedEdge;
+    }
 
-    public abstract String getMetallurgy();
+    public String getMetallurgy() {
+        return metallurgy;
+    }
 
     /**
      * Static inner class to track the count of each 

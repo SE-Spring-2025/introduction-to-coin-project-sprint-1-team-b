@@ -39,114 +39,6 @@ public class Nickel extends Coin {
     }
 
     /**
-     * Gets the value of the Nickel.
-     * 
-     * @return coin value
-     */
-    public double getValue() {
-        return VALUE;
-    }
-
-    /**
-     * Gets the common name of the Nickel.
-     * 
-     * @return common name
-     */
-    public String getCommonName() {
-        return COMMON_NAME;
-    }
-
-    /**
-     * Gets the front motto.
-     * 
-     * @return front motto
-     */
-    public String getFrontMotto() {
-        return FRONT_MOTTO;
-    }
-
-    /**
-     * Gets the back motto.
-     * 
-     * @return back motto
-     */
-    public String getBackMotto() {
-        return BACK_MOTTO;
-    }
-
-    /**
-     * Gets the year of manufacture.
-     * 
-     * @return year of coin
-     */
-    public int getYear() {
-        return manufactureYear;
-    }
-
-    /**
-     * Gets the front image label.
-     * 
-     * @return front image
-     */
-    public String getFrontImage() {
-        return FRONT_IMAGE;
-    }
-
-    /**
-     * Gets the back image label.
-     * 
-     * @return back image
-     */
-    public String getBackImage() {
-        return BACK_IMAGE;
-    }
-
-    /**
-     * Gets the front label.
-     * 
-     * @return front label
-     */
-    public String getFrontLabel() {
-        return FRONT_LABEL;
-    }
-
-    /**
-     * Gets the back label.
-     * 
-     * @return back label
-     */
-    public String getBackLabel() {
-        return BACK_LABEL;
-    }
-
-    /**
-     * Gets the value description text.
-     * 
-     * @return value description
-     */
-    public String getValueDescription() {
-        return VALUE_DESCRIPTION;
-    }
-
-    /**
-     * Returns true if the Nickel has a ridged edge.
-     * 
-     * @return true if ridged edge
-     */
-    public Boolean getRidgedEdge() {
-        return RIDGED_EDGE;
-    }
-
-    /**
-     * Gets the metallurgy of the Nickel.
-     * 
-     * @return metallurgy
-     */
-    public String getMetallurgy() {
-        return METALLURGY.smelt();
-    }
-
-    /**
      * Manufacture Methods
      */
 
@@ -163,6 +55,9 @@ public class Nickel extends Coin {
      protected Coin printFront(Coin c) {
         c.frontMotto=FRONT_MOTTO;
         c.frontLabel=FRONT_LABEL;
+        if(c.manufactureYear == 0) {
+            c.manufactureYear=DEFAULT_YEAR;
+        } else c.manufactureYear=DEFAULT_YEAR;
         return c;
      }
 
@@ -174,6 +69,7 @@ public class Nickel extends Coin {
      protected Coin printBack(Coin c) {
         c.backLabel=BACK_LABEL;
         c.backMotto=BACK_MOTTO;
+        c.valueDescription=VALUE_DESCRIPTION;
         return c;
      }
 }

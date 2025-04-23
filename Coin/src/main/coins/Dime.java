@@ -38,113 +38,6 @@ public class Dime extends Coin {
         Dime.manufactureYear = year;
     }
 
-    /**
-     * Gets the value of the Dime.
-     * 
-     * @return coin value
-     */
-    public double getValue() {
-        return VALUE;
-    }
-
-    /**
-     * Gets the common name of the Dime.
-     * 
-     * @return common name
-     */
-    public String getCommonName() {
-        return COMMON_NAME;
-    }
-
-    /**
-     * Gets the front motto.
-     * 
-     * @return front motto
-     */
-    public String getFrontMotto() {
-        return FRONT_MOTTO;
-    }
-
-    /**
-     * Gets the back motto.
-     * 
-     * @return back motto
-     */
-    public String getBackMotto() {
-        return BACK_MOTTO;
-    }
-
-    /**
-     * Gets the year the coin was manufactured.
-     * 
-     * @return manufacture year
-     */
-    public int getYear() {
-        return manufactureYear;
-    }
-
-    /**
-     * Gets the front image.
-     * 
-     * @return front image
-     */
-    public String getFrontImage() {
-        return FRONT_IMAGE;
-    }
-
-    /**
-     * Gets the back image.
-     * 
-     * @return back image
-     */
-    public String getBackImage() {
-        return BACK_IMAGE;
-    }
-
-    /**
-     * Gets the front label.
-     * 
-     * @return front label
-     */
-    public String getFrontLabel() {
-        return FRONT_LABEL;
-    }
-
-    /**
-     * Gets the back label.
-     * 
-     * @return back label
-     */
-    public String getBackLabel() {
-        return BACK_LABEL;
-    }
-
-    /**
-     * Gets the value description.
-     * 
-     * @return value description
-     */
-    public String getValueDescription() {
-        return VALUE_DESCRIPTION;
-    }
-
-    /**
-     * Returns true if the Dime has a ridged edge.
-     * 
-     * @return true if ridged
-     */
-    public Boolean getRidgedEdge() {
-        return RIDGED_EDGE;
-    }
-
-    /**
-     * Gets the metallurgy of the Dime.
-     * 
-     * @return metallurgy
-     */
-    public String getMetallurgy() {
-        return METALLURGY.smelt();
-    }
 
     /**
      * Manufacture Methods
@@ -163,6 +56,9 @@ public class Dime extends Coin {
      protected Coin printFront(Coin c) {
         c.frontMotto=FRONT_MOTTO;
         c.frontLabel=FRONT_LABEL;
+        if(c.manufactureYear == 0) {
+            c.manufactureYear=DEFAULT_YEAR;
+        } else c.manufactureYear=DEFAULT_YEAR;
         return c;
      }
 
@@ -174,6 +70,7 @@ public class Dime extends Coin {
      protected Coin printBack(Coin c) {
         c.backLabel=BACK_LABEL;
         c.backMotto=BACK_MOTTO;
+        c.valueDescription=VALUE_DESCRIPTION;
         return c;
      }
 }
