@@ -1,5 +1,5 @@
 package coins;
 
 public interface Metallurgy {
-    public String smelt();
+    public String smelt(Coin c);
 }
