@@ -17,16 +17,16 @@ public abstract class Coin {
 
     private double value;
     private String commonName;
-    private String frontMotto;
-    private int manufactureYear;
-    private String frontImage;
-    private String backImage;
-    private String backMotto;
-    private String frontLabel;
-    private String backLabel;
-    private String valueDescription;
-    private boolean ridgedEdge;
-    private String metallurgy;
+    protected String frontMotto;
+    protected int manufactureYear;
+    protected String frontImage;
+    protected String backImage;
+    protected String backMotto;
+    protected String frontLabel;
+    protected String backLabel;
+    protected String valueDescription;
+    protected boolean ridgedEdge;
+    protected String metallurgy;
     private Metallurgy smelter;
 
     /**
@@ -54,7 +54,7 @@ public abstract class Coin {
 
     @Override
     public String toString() {
-        this.smelt(this);
+        this.smelt();
         String s = String.format(
             "[%s,%.2f,%d,'%s','%s','%s','%s','%s','%s','%s',",
             commonName, value, manufactureYear, frontMotto, backMotto,
@@ -66,8 +66,8 @@ public abstract class Coin {
         return s;
     }
 
-    public void smelt(Coin c) {
-        this.metallurgy = smelter.smelt(c);
+    public void smelt() {
+        this.metallurgy = smelter.smelt();
     }
 
     public abstract double getValue();
@@ -164,11 +164,37 @@ public abstract class Coin {
                 observer.update();
             }
         }
-        public Coin manufacture(Coin c0) {
-            Coin c1 = c0.smelt();
-
-            return c1;
-        }
     }
+
+    public Coin manufacture(Coin c0) {
+        c0.smelt();
+        Coin c1 = c0;
+        c1 = c1.ridgeEdge(c1);
+        c1 = c1.imprintFront(c1);
+        c1 = c1.printFront(c1);
+        flip(c1);
+        c1 = c1.printBackImage(c1);
+        c1 = c1.printBack(c1);
+        buff(c1);
+        return c1;
+    }
+
+    /**
+     * Abstract classes for manufacture method
+     */
+
+     abstract Coin ridgeEdge(Coin c);
+     abstract Coin imprintFront(Coin c);
+     abstract Coin printFront(Coin c);
+     abstract Coin printBackImage(Coin c);
+     abstract Coin printBack(Coin c);
+
+     private void flip(Coin c) {
+        System.out.println(c.commonName + "is flipped.");
+     }
+     
+     private void buff(Coin c) {
+        System.out.println(c.commonName + "is buffed.");
+     }
     
 }

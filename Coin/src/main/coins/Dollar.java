@@ -160,11 +160,6 @@ public class Dollar extends Coin {
         c.ridgedEdge=RIDGED_EDGE;
         return c;
      }
-
-     protected Coin printFrontImage(Coin c) {
-        c.frontImage=FRONT_IMAGE;
-        return c;
-     }
      
      protected Coin printFront(Coin c) {
         c.frontMotto=FRONT_MOTTO;

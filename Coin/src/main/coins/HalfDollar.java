@@ -161,10 +161,6 @@ public class HalfDollar extends Coin {
         return c;
      }
 
-     protected Coin printFrontImage(Coin c) {
-        c.frontImage=FRONT_IMAGE;
-        return c;
-     }
      
      protected Coin printFront(Coin c) {
         c.frontMotto=FRONT_MOTTO;
