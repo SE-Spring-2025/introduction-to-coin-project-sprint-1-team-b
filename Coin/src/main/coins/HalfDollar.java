@@ -25,9 +25,7 @@ public class HalfDollar extends Coin {
      * Constructor for the HalfDollar class.
      */
     public HalfDollar() {
-        super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
-            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
-            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(VALUE, COMMON_NAME, METALLURGY);
     }
 
     /**
@@ -36,9 +34,7 @@ public class HalfDollar extends Coin {
      * @param year year of the coin
      */
     public HalfDollar(int year) {
-        super(VALUE, COMMON_NAME, FRONT_MOTTO, year,
-            FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
-            BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(VALUE, COMMON_NAME, METALLURGY);
         HalfDollar.manufactureYear = year;
     }
 
@@ -149,4 +145,41 @@ public class HalfDollar extends Coin {
     public String getMetallurgy() {
         return METALLURGY.smelt();
     }
+
+    
+    /**
+     * Manufacture Methods
+     */
+
+     protected Coin imprintFront(Coin c) {
+        c.frontImage=FRONT_IMAGE;
+        return c;
+     }
+
+     protected Coin ridgeEdge(Coin c) {
+        c.ridgedEdge=RIDGED_EDGE;
+        return c;
+     }
+
+     protected Coin printFrontImage(Coin c) {
+        c.frontImage=FRONT_IMAGE;
+        return c;
+     }
+     
+     protected Coin printFront(Coin c) {
+        c.frontMotto=FRONT_MOTTO;
+        c.frontLabel=FRONT_LABEL;
+        return c;
+     }
+
+     protected Coin printBackImage(Coin c) {
+        c.backImage=BACK_IMAGE;
+        return c;
+     }
+
+     protected Coin printBack(Coin c) {
+        c.backLabel=BACK_LABEL;
+        c.backMotto=BACK_MOTTO;
+        return c;
+     }
 }

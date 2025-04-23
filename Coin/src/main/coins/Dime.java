@@ -154,4 +154,31 @@ public class Dime extends Coin {
         c.frontImage=FRONT_IMAGE;
         return c;
      }
+
+     protected Coin ridgeEdge(Coin c) {
+        c.ridgedEdge=RIDGED_EDGE;
+        return c;
+     }
+
+     protected Coin printFrontImage(Coin c) {
+        c.frontImage=FRONT_IMAGE;
+        return c;
+     }
+     
+     protected Coin printFront(Coin c) {
+        c.frontMotto=FRONT_MOTTO;
+        c.frontLabel=FRONT_LABEL;
+        return c;
+     }
+
+     protected Coin printBackImage(Coin c) {
+        c.backImage=BACK_IMAGE;
+        return c;
+     }
+
+     protected Coin printBack(Coin c) {
+        c.backLabel=BACK_LABEL;
+        c.backMotto=BACK_MOTTO;
+        return c;
+     }
 }

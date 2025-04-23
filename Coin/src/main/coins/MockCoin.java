@@ -26,9 +26,7 @@ public class MockCoin extends Coin {
      * No-argument constructor for MockCoin. Sets default values.
      */
     public MockCoin() {
-        super(value, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR, FRONT_IMAGE,
-            BACK_IMAGE, BACK_MOTTO, FRONT_LABEL, BACK_LABEL,
-            VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(value, COMMON_NAME, METALLURGY);
     }
 
     /**
@@ -37,9 +35,7 @@ public class MockCoin extends Coin {
      * @param year the year the coin was manufactured.
      */
     public MockCoin(int year) {
-        super(value, COMMON_NAME, FRONT_MOTTO, year, FRONT_IMAGE,
-            BACK_IMAGE, BACK_MOTTO, FRONT_LABEL, BACK_LABEL,
-            VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(value, COMMON_NAME, METALLURGY);
         MockCoin.manufactureYear = year;
     }
 
@@ -49,9 +45,7 @@ public class MockCoin extends Coin {
      * @param value the value of the coin.
      */
     public MockCoin(double value) {
-        super(value, COMMON_NAME, FRONT_MOTTO, manufactureYear, FRONT_IMAGE,
-            BACK_IMAGE, BACK_MOTTO, FRONT_LABEL, BACK_LABEL,
-            VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
+        super(value, COMMON_NAME, METALLURGY);
         MockCoin.value = value;
     }
 
@@ -162,4 +156,40 @@ public class MockCoin extends Coin {
     public String getMetallurgy() {
         return METALLURGY.smelt();
     }
+
+    /**
+     * Manufacture Methods
+     */
+
+     protected Coin imprintFront(Coin c) {
+        c.frontImage=FRONT_IMAGE;
+        return c;
+     }
+
+     protected Coin ridgeEdge(Coin c) {
+        c.ridgedEdge=RIDGED_EDGE;
+        return c;
+     }
+
+     protected Coin printFrontImage(Coin c) {
+        c.frontImage=FRONT_IMAGE;
+        return c;
+     }
+     
+     protected Coin printFront(Coin c) {
+        c.frontMotto=FRONT_MOTTO;
+        c.frontLabel=FRONT_LABEL;
+        return c;
+     }
+
+     protected Coin printBackImage(Coin c) {
+        c.backImage=BACK_IMAGE;
+        return c;
+     }
+
+     protected Coin printBack(Coin c) {
+        c.backLabel=BACK_LABEL;
+        c.backMotto=BACK_MOTTO;
+        return c;
+     }
 }
