@@ -1,49 +1,50 @@
-package coins;
+package main.coins;
 
 /**
- * Represents a Quarter coin.
+ * Represents a Dollar coin.
  * 
  * @author GroupB
  * @version 1.0
  */
-public class Quarter extends Coin {
-    private static final double VALUE = 0.25;
-    private static final String COMMON_NAME = "Quarter";
+public class Dollar extends Coin {
+    private static final double VALUE = 1.00;
+    private static final String COMMON_NAME = "Dollar";
     private static final String FRONT_MOTTO = "IN GOD WE TRUST";
     private static final int DEFAULT_YEAR = 1776;
     private static int manufactureYear;
-    private static final String FRONT_IMAGE = "G_Washington";
-    private static final String BACK_IMAGE = "Eagle";
+    private static final String FRONT_IMAGE = "S_Anthony";
+    private static final String BACK_IMAGE = "Moon_Eagle";
     private static final String BACK_MOTTO = "E PLURIBUS UNUM";
     private static final String FRONT_LABEL = "LIBERTY";
     private static final String BACK_LABEL = "UNITED STATES OF AMERICA";
-    private static final String VALUE_DESCRIPTION = "QUARTER DOLLAR";
+    private static final String VALUE_DESCRIPTION = "ONE DOLLAR";
     private static final boolean RIDGED_EDGE = true;
-    private static final String METALLURGY = "Cupro-Nickel";
+    private static final Metallurgy METALLURGY = new CuproNickel();
 
     /**
-     * Constructor for objects of class Quarter. Sets value of quarter to 0.25.
+     * Constructor for the Dollar class. Sets the value to 1.0.
      */
-    public Quarter() {
+    public Dollar() {
         super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
             FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
             BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
     }
 
     /**
-     * Constructor for the Quarter class. Sets the value of a
-     * quarter to 0.25 and sets the year.
+     * Constructor for the Dollar class with specified year.
+     * 
      * @param year year of coin
      */
-    public Quarter(int year) {
+    public Dollar(int year) {
         super(VALUE, COMMON_NAME, FRONT_MOTTO, year,
             FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
             BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
-        Quarter.manufactureYear = year;
+        Dollar.manufactureYear = year;
     }
 
     /**
-     * Gets the monetary value of the Quarter.
+     * Gets the coin's value.
+     * 
      * @return value of the coin
      */
     public double getValue() {
@@ -51,7 +52,8 @@ public class Quarter extends Coin {
     }
 
     /**
-     * Gets the common name of the Quarter.
+     * Gets the coin's common name.
+     * 
      * @return common name
      */
     public String getCommonName() {
@@ -59,7 +61,8 @@ public class Quarter extends Coin {
     }
 
     /**
-     * Gets the front motto of the Quarter.
+     * Gets the coin's front motto.
+     * 
      * @return front motto
      */
     public String getFrontMotto() {
@@ -67,7 +70,8 @@ public class Quarter extends Coin {
     }
 
     /**
-     * Gets the back motto of the Quarter.
+     * Gets the coin's back motto.
+     * 
      * @return back motto
      */
     public String getBackMotto() {
@@ -75,15 +79,17 @@ public class Quarter extends Coin {
     }
 
     /**
-     * Gets the year of manufacture of the Quarter.
-     * @return manufacture year
+     * Gets the year the coin was manufactured.
+     * 
+     * @return year of manufacture
      */
     public int getYear() {
         return manufactureYear;
     }
 
     /**
-     * Gets the front image of the Quarter.
+     * Gets the coin's front image.
+     * 
      * @return front image
      */
     public String getFrontImage() {
@@ -91,7 +97,8 @@ public class Quarter extends Coin {
     }
 
     /**
-     * Gets the back image of the Quarter.
+     * Gets the coin's back image.
+     * 
      * @return back image
      */
     public String getBackImage() {
@@ -99,7 +106,8 @@ public class Quarter extends Coin {
     }
 
     /**
-     * Gets the front label of the Quarter.
+     * Gets the coin's front label.
+     * 
      * @return front label
      */
     public String getFrontLabel() {
@@ -107,7 +115,8 @@ public class Quarter extends Coin {
     }
 
     /**
-     * Gets the back label of the Quarter.
+     * Gets the coin's back label.
+     * 
      * @return back label
      */
     public String getBackLabel() {
@@ -115,7 +124,8 @@ public class Quarter extends Coin {
     }
 
     /**
-     * Gets the value description of the Quarter.
+     * Gets the description of the coin's value.
+     * 
      * @return value description
      */
     public String getValueDescription() {
@@ -123,18 +133,20 @@ public class Quarter extends Coin {
     }
 
     /**
-     * Returns true if the Quarter has a ridged edge.
-     * @return true if ridged edge
+     * Indicates whether the coin has a ridged edge.
+     * 
+     * @return true if ridged, false otherwise
      */
     public Boolean getRidgedEdge() {
         return RIDGED_EDGE;
     }
 
     /**
-     * Gets the metallurgy composition of the Quarter.
+     * Gets the metallurgy of the coin.
+     * 
      * @return metallurgy
      */
     public String getMetallurgy() {
-        return METALLURGY;
+        return METALLURGY.smelt();
     }
 }

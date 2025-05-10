@@ -1,58 +1,58 @@
-package coins;
+package main.coins;
 
 /**
- * Represents a Dime coin.
+ * Represents a HalfDollar coin.
  * 
  * @author GroupB
  * @version 1.0
  */
-public class Dime extends Coin {
-    private static final double VALUE = 0.1;
-    private static final String COMMON_NAME = "Dime";
+public class HalfDollar extends Coin {
+    private static final double VALUE = 0.5;
+    private static final String COMMON_NAME = "HalfDollar";
     private static final String FRONT_MOTTO = "IN GOD WE TRUST";
     private static final int DEFAULT_YEAR = 1776;
     private static int manufactureYear;
-    private static final String FRONT_IMAGE = "F_Roosevelt";
-    private static final String BACK_IMAGE = "Torch_Branches";
+    private static final String FRONT_IMAGE = "J_Kennedy";
+    private static final String BACK_IMAGE = "Presidential_Seal";
     private static final String BACK_MOTTO = "E PLURIBUS UNUM";
     private static final String FRONT_LABEL = "LIBERTY";
     private static final String BACK_LABEL = "UNITED STATES OF AMERICA";
-    private static final String VALUE_DESCRIPTION = "ONE DIME";
+    private static final String VALUE_DESCRIPTION = "HALF DOLLAR";
     private static final boolean RIDGED_EDGE = true;
-    private static final String METALLURGY = "Cupro-Nickel";
+    private static final Metallurgy METALLURGY = new CuproNickel();
 
     /**
-     * Constructor for the Dime class.
+     * Constructor for the HalfDollar class.
      */
-    public Dime() {
+    public HalfDollar() {
         super(VALUE, COMMON_NAME, FRONT_MOTTO, DEFAULT_YEAR,
             FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
             BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
     }
 
     /**
-     * Constructor for the Dime class with a specified year.
+     * Constructor for the HalfDollar class with a specified year.
      * 
      * @param year year of the coin
      */
-    public Dime(int year) {
+    public HalfDollar(int year) {
         super(VALUE, COMMON_NAME, FRONT_MOTTO, year,
             FRONT_IMAGE, BACK_IMAGE, BACK_MOTTO, FRONT_LABEL,
             BACK_LABEL, VALUE_DESCRIPTION, RIDGED_EDGE, METALLURGY);
-        Dime.manufactureYear = year;
+        HalfDollar.manufactureYear = year;
     }
 
     /**
-     * Gets the value of the Dime.
+     * Gets the coin's value.
      * 
-     * @return coin value
+     * @return value of the coin
      */
     public double getValue() {
         return VALUE;
     }
 
     /**
-     * Gets the common name of the Dime.
+     * Gets the coin's common name.
      * 
      * @return common name
      */
@@ -61,7 +61,7 @@ public class Dime extends Coin {
     }
 
     /**
-     * Gets the front motto.
+     * Gets the coin's front motto.
      * 
      * @return front motto
      */
@@ -70,7 +70,7 @@ public class Dime extends Coin {
     }
 
     /**
-     * Gets the back motto.
+     * Gets the coin's back motto.
      * 
      * @return back motto
      */
@@ -81,14 +81,14 @@ public class Dime extends Coin {
     /**
      * Gets the year the coin was manufactured.
      * 
-     * @return manufacture year
+     * @return year of manufacture
      */
     public int getYear() {
         return manufactureYear;
     }
 
     /**
-     * Gets the front image.
+     * Gets the coin's front image.
      * 
      * @return front image
      */
@@ -97,7 +97,7 @@ public class Dime extends Coin {
     }
 
     /**
-     * Gets the back image.
+     * Gets the coin's back image.
      * 
      * @return back image
      */
@@ -106,7 +106,7 @@ public class Dime extends Coin {
     }
 
     /**
-     * Gets the front label.
+     * Gets the coin's front label.
      * 
      * @return front label
      */
@@ -115,7 +115,7 @@ public class Dime extends Coin {
     }
 
     /**
-     * Gets the back label.
+     * Gets the coin's back label.
      * 
      * @return back label
      */
@@ -124,7 +124,7 @@ public class Dime extends Coin {
     }
 
     /**
-     * Gets the value description.
+     * Gets the description of the coin's value.
      * 
      * @return value description
      */
@@ -133,20 +133,20 @@ public class Dime extends Coin {
     }
 
     /**
-     * Returns true if the Dime has a ridged edge.
+     * Indicates whether the coin has a ridged edge.
      * 
-     * @return true if ridged
+     * @return true if ridged, false otherwise
      */
     public Boolean getRidgedEdge() {
         return RIDGED_EDGE;
     }
 
     /**
-     * Gets the metallurgy of the Dime.
+     * Gets the metallurgy of the coin.
      * 
      * @return metallurgy
      */
     public String getMetallurgy() {
-        return METALLURGY;
+        return METALLURGY.smelt();
     }
 }
